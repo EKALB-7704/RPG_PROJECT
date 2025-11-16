@@ -34,7 +34,7 @@ int main()
     }
     else 
     {
-        cout << "That wasnt an option!";
+        cout << "That was not an option!";
         
     }
     
