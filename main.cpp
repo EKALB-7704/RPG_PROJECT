@@ -37,6 +37,7 @@ int main()
     }
     else if (action == "TRAVEL")
     {
+        area.current_area();
         area.travel();
     }
     else 

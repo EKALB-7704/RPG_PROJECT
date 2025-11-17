@@ -42,7 +42,7 @@ void Character::create()
 void Character::character_readback()
 {
     std::cout << "Character Created! \n";
-    std::cout << "you are a " << Age << " year old " << Gender << " " << Race << " named " << Name; 
+    std::cout << "you are a " << Age << " year old " << Gender << " " << Race << " named " << Name << endl; 
 }
 
 void Character::create_prompt()
