@@ -13,7 +13,7 @@ class Area
     void travel();
     void current_area();
     string destination;
-    string location = "FOREST";
+    string location = "FOREST";  //will be changed to be a different starting location based on Race
 
 
     
