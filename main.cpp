@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Area.h"
 #include "Character_create.h"
+#include "Encounters.h"
 #include <iostream>
 using namespace std;
 
@@ -15,6 +16,7 @@ int main()
     Game game;
     Area area;
     Character character;
+    Encounters encounters;
    
 
     game.Run();
@@ -26,6 +28,8 @@ int main()
 
     while(Program_running = true)
     {
+        encounters.enemy_type();
+        
 
         cout << "What would you like to do? " << endl;
         cout << "[ATTACK]\n[DEFEND]\n[TRAVEL]\n";
