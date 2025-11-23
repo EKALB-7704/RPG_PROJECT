@@ -5,14 +5,13 @@
 #include <vector>
 #include <random>
 
-#include <stdlib.h>
-#include <time.h>
+
 
 
   
 
 
-void Encounters::enemy_type()
+void Encounters::enemy_create()
 {
    std::srand ( time(NULL) ); //initialize the random seed
   
@@ -21,4 +20,8 @@ void Encounters::enemy_type()
   int RandIndex = rand() % 6; //generates a random number between 0 and 6
   std::cout << "A "<< Enemies[RandIndex] << " has appeared!" << endl;
 
+}
+void Encounters::enemy_stats()
+{
+  
 }

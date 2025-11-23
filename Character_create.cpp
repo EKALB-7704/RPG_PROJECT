@@ -7,6 +7,7 @@
 #include <string>
 
 
+
 void Character::name()
 {
     std::cout << "what is your name? ";
@@ -31,28 +32,63 @@ void Character::race()
     std::cin >> Race;
 }
 
+void Character::C_Class()
+{
+    std::cout << "what class are you " << endl;
+    std::cout << "[ARCHER] [KNIGHT] [MAGE]";
+    std::cin >> c_class;
+
+    if (c_class == "ARCHER")
+    {
+        HEALTH = 20;
+        ATTACK = 3;
+        DEFENSE = 2;
+    }
+    else if (c_class == "KNIGHT")
+    {
+        HEALTH = 20;
+        ATTACK = 2;
+        DEFENSE = 5;
+    }
+    else if (c_class == "MAGE")
+    {
+        HEALTH = 20;
+        ATTACK = 5;
+        DEFENSE = 2;
+    }
+
+}
+
+void Character::stats_readback()
+{
+    std::cout << "HEALTH:" << HEALTH << endl << "ATTACK:" << ATTACK << endl << "DEFENSE:" << DEFENSE << endl;
+}
+
 void Character::create()
 {
+
     name();
     age_years();
     gender();
     race();
+    C_Class();
+    //character_exists = true;
 }
 
 void Character::character_readback()
 {
     std::cout << "Character Created! \n";
-    std::cout << "you are a " << Age << " year old " << Gender << " " << Race << " named " << Name << endl; 
+    std::cout << "you are a " << Age << " year old " << Gender << " " << Race <<" "<< c_class << " named " << Name << endl; 
 }
 
 void Character::create_prompt()
 {
-    std::cout << "would you like to create a character, [Y/N] ";
-    std::cin >> Create_choice;
-    if (Create_choice == "Y")
-    {
-    create();
-    }
+        std::cout << "would you like to create a character?, [Y/N] ";
+        std::cin >> Create_choice;
+        if (Create_choice == "Y")
+        {
+        create();
+        }
 }
 
 

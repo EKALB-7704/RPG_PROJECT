@@ -9,7 +9,8 @@ int main()
 {
     string x;
     string action;
-    bool Program_running = true;
+    bool Program_running = true; // bool to create loops to run always while the program is running
+    bool Create_character;
 
 
     
@@ -19,20 +20,23 @@ int main()
     Encounters encounters;
    
 
-    game.Run();
+    //game.Run();
 
     cout << "\nGame startup complete! " << endl;
-
+if (Create_character)
+{
     character.create_prompt();
     character.character_readback();
+}
+
 
     while(Program_running = true)
     {
-        encounters.enemy_type();
+        encounters.enemy_create();
         
 
         cout << "What would you like to do? " << endl;
-        cout << "[ATTACK]\n[DEFEND]\n[TRAVEL]\n";
+        cout << "[ATTACK]\n[DEFEND]\n[TRAVEL]\n[STATS]\n";
         cin >> action;
 
         if (action == "ATTACK")
@@ -47,6 +51,10 @@ int main()
         {
             area.current_area();
             area.travel();
+        }
+        else if (action == "STATS")
+        {
+            character.stats_readback();
         }
         else 
         {

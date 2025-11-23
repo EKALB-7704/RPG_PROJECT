@@ -17,6 +17,7 @@ class Character
     void gender();
     void race();
     void name();
+    void C_Class();
     
 
     
@@ -29,11 +30,17 @@ class Character
     void create_prompt();
     void create();
     void character_readback();
+    void stats_readback();
     int Age;
+    int ATTACK, DEFENSE, HEALTH;
     string Name;
     string Gender;
     string Race;
+    string c_class;
     string Create_choice;
+   
+    
+    
 
 
 };
