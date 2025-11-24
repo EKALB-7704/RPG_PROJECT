@@ -23,16 +23,16 @@ int main()
     //game.Run();
 
     cout << "\nGame startup complete! " << endl;
-if (Create_character)
-{
+
     character.create_prompt();
-    character.character_readback();
-}
+  
+
 
 
     while(Program_running = true)
     {
-        encounters.enemy_create();
+        //encounters.enemy_create();
+        encounters.random_encounter();
         
 
         cout << "What would you like to do? " << endl;

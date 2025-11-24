@@ -43,18 +43,21 @@ void Character::C_Class()
         HEALTH = 20;
         ATTACK = 3;
         DEFENSE = 2;
+        PLAYER_LEVEL = 1;
     }
     else if (c_class == "KNIGHT")
     {
         HEALTH = 20;
         ATTACK = 2;
         DEFENSE = 5;
+        PLAYER_LEVEL = 1;
     }
     else if (c_class == "MAGE")
     {
         HEALTH = 20;
         ATTACK = 5;
         DEFENSE = 2;
+        PLAYER_LEVEL = 1;
     }
 
 }
@@ -88,6 +91,7 @@ void Character::create_prompt()
         if (Create_choice == "Y")
         {
         create();
+        character_readback();
         }
 }
 

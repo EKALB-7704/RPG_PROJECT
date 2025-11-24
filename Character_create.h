@@ -32,7 +32,8 @@ class Character
     void character_readback();
     void stats_readback();
     int Age;
-    int ATTACK, DEFENSE, HEALTH;
+    int ATTACK, DEFENSE, HEALTH, PLAYER_LEVEL;
+    
     string Name;
     string Gender;
     string Race;
