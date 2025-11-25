@@ -1,11 +1,6 @@
-//Framework for character creator, function definitions will be replaced by 
-//charlies code once fully implemented
-
-
-#include "Character_create.h"
+#include "../include/Character.h"
 #include <iostream>
 #include <string>
-
 
 
 void Character::name()
@@ -32,68 +27,70 @@ void Character::race()
     std::cin >> Race;
 }
 
-void Character::C_Class()
-{
-    std::cout << "what class are you " << endl;
-    std::cout << "[ARCHER] [KNIGHT] [MAGE]";
-    std::cin >> c_class;
-
-    if (c_class == "ARCHER")
-    {
-        HEALTH = 20;
-        ATTACK = 3;
-        DEFENSE = 2;
-        PLAYER_LEVEL = 1;
-    }
-    else if (c_class == "KNIGHT")
-    {
-        HEALTH = 20;
-        ATTACK = 2;
-        DEFENSE = 5;
-        PLAYER_LEVEL = 1;
-    }
-    else if (c_class == "MAGE")
-    {
-        HEALTH = 20;
-        ATTACK = 5;
-        DEFENSE = 2;
-        PLAYER_LEVEL = 1;
-    }
-
-}
-
-void Character::stats_readback()
-{
-    std::cout << "HEALTH:" << HEALTH << endl << "ATTACK:" << ATTACK << endl << "DEFENSE:" << DEFENSE << endl;
-}
-
 void Character::create()
 {
-
     name();
     age_years();
     gender();
     race();
-    C_Class();
-    //character_exists = true;
 }
 
 void Character::character_readback()
 {
     std::cout << "Character Created! \n";
-    std::cout << "you are a " << Age << " year old " << Gender << " " << Race <<" "<< c_class << " named " << Name << endl; 
+    std::cout << "you are a " << Age << " year old " << Gender << " " << Race << " named " << Name << std::endl; 
 }
 
 void Character::create_prompt()
 {
-        std::cout << "would you like to create a character?, [Y/N] ";
-        std::cin >> Create_choice;
-        if (Create_choice == "Y")
-        {
+    std::cout << "would you like to create a character, [Y/N] ";
+    std::cin >> Create_choice;
+    if (Create_choice == "Y")
+    {
         create();
-        character_readback();
-        }
+    }
 }
 
+void Character::starting_stats()
+{
+    // assume member 'Class' is an int where 1=warrior, 2=mage, 3=archer
+    if (Class == 1) // warrior
+    {
+        base_strength += 0;
+        base_defense += 5;
+        base_health += 20;
+    }
+    else if (Class == 2) // mage
+    {
+        base_strength += 5;
+        base_defense -= 5;
+        base_health += 0;
+    }
+    else if (Class == 3) // archer
+    {
+        base_strength += 0;
+        base_defense += 0;
+        base_health += 25;
+    }
 
+    // compute current stats once
+    current_strength = base_strength + (level * 1);
+    current_defense = base_defense + (level * 1);
+    current_health = base_health + (level * 5);
+
+    std::cout << " to see your stats at any time type stats" << std::endl;
+
+    std::string command;
+    while (true) {
+        std::cin >> command;
+        if (command == "stats")
+        {
+            std::cout << " Strength: " << current_strength << std::endl;
+            std::cout << " Defense: " << current_defense << std::endl;
+            std::cout << " Health: " << current_health << std::endl;
+            std::cout << " Level: " << level << std::endl;
+            std::cout << " Gold: " << current_gold << std::endl;
+        }
+    }
+}
 
