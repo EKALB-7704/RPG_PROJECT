@@ -78,19 +78,16 @@ void Character::starting_stats()
     current_defense = base_defense + (level * 1);
     current_health = base_health + (level * 5);
 
-    std::cout << " to see your stats at any time type stats" << std::endl;
+}
+void Character::stats_readback()
+{
+  
 
-    std::string command;
-    while (true) {
-        std::cin >> command;
-        if (command == "stats")
-        {
-            std::cout << " Strength: " << current_strength << std::endl;
-            std::cout << " Defense: " << current_defense << std::endl;
-            std::cout << " Health: " << current_health << std::endl;
-            std::cout << " Level: " << level << std::endl;
-            std::cout << " Gold: " << current_gold << std::endl;
-        }
-    }
+        std::cout << " Strength: " << current_strength << std::endl;
+        std::cout << " Defense: " << current_defense << std::endl;
+        std::cout << " Health: " << current_health << std::endl;
+        std::cout << " Level: " << level << std::endl;
+        std::cout << " Gold: " << current_gold << std::endl;
+
 }
 

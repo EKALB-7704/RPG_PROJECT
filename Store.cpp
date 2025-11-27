@@ -1,5 +1,5 @@
-#include "../include/Store.h"
-#include "../include/Character.h"
+#include "Store.h"
+#include "Character_create.h"
 #include <iostream>
 #include <string>
 
@@ -54,4 +54,9 @@ void store::buy_shield(int &gold, int &current_defense)
     {
         std::cout << "Not enough gold to buy a shield; maybe a potion would suit you better.\n";
     }
+}
+
+void store::dialogue_cycle()
+{
+    
 }

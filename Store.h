@@ -17,4 +17,5 @@ class store
     void buy_potion(int &gold, int &current_health);
     void buy_sword(int &gold, int &current_strength);
     void buy_shield(int &gold, int &current_defense);
+    void dialogue_cycle();
 };

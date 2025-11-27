@@ -1,6 +1,7 @@
 #include "Area.h"
 #include "Encounters.h"
 #include "Character_create.h"
+#include "Store.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -27,7 +28,6 @@ void Encounters::random_encounter()
     
   case 2: 
     current_enc = "MERCHANT";
-    //callums merchant function will go here, after it has been defined and implemented
     std::cout << "You have met a merchant!" << endl;
     break;
 

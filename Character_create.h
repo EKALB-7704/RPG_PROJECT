@@ -35,6 +35,7 @@ class Character
     void create_prompt();
     void create();
     void character_readback();
+    void stats_readback();
     int Age;
     string Name;
     string Gender;

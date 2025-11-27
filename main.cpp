@@ -36,16 +36,16 @@ int main()
         
 
         cout << "What would you like to do? " << endl;
-        cout << "[ATTACK]\n[DEFEND]\n[TRAVEL]\n[STATS]\n";
+        cout << "[ATTACK]\n[HEAL]\n[TRAVEL]\n[STATS]\n";
         cin >> action;
 
         if (action == "ATTACK")
         {
             cout << "You attacked!";
         }
-        else if (action == "DEFEND")
+        else if (action == "HEAL")
         {
-            cout << "You defended";
+            cout << "You healed";
         }
         else if (action == "TRAVEL")
         {
