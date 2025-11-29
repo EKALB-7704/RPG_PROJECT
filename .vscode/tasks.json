@@ -7,9 +7,15 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${workspaceFolder}/*.cpp",
+                "${workspaceFolder}\\main.cpp",
+                "${workspaceFolder}\\Area.cpp",
+                "${workspaceFolder}\\Store.cpp",
+                "${workspaceFolder}\\Game.cpp",
+                "${workspaceFolder}\\Encounters.cpp",
+                "${workspaceFolder}\\Main_Menu.cpp",
+                "${workspaceFolder}\\Character_create.cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\RPG.exe"
             ],
             "options": {
                 "cwd": "c:\\Program Files\\CodeBlocks\\MinGW\\bin"

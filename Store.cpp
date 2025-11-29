@@ -60,3 +60,4 @@ void store::dialogue_cycle()
 {
     
 }
+

@@ -42,7 +42,7 @@ class Character
     string Create_choice;
     int race;
 
-    string Create_choice;  
+  
     char confirmation;
      int m,M,f,F;
     

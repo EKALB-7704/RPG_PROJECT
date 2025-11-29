@@ -1,21 +1,24 @@
 #include "Game.h"
 #include "Area.h"
 #include "Character_create.h"
+#include "Encounters.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    string x;
-    string action;
-    bool Program_running = true; // bool to create loops to run always while the program is running
+    int x;
+    string action = "action";
+    cin >> action;
+    /*bool Program_running = true; // bool to create loops to run always while the program is running
     bool Create_character;
 
 
     
     Game game;
     Area area;
-    Character character;
+    Character Character;
     Encounters encounters;
    
 
@@ -23,7 +26,8 @@ int main()
 
     cout << "\nGame startup complete! " << endl;
 
-    character.create_prompt();
+    //Character.create_prompt();
+    Character.Create();
   
 
 
@@ -36,7 +40,7 @@ int main()
 
         cout << "What would you like to do? " << endl;
         cout << "[ATTACK]\n[HEAL]\n[TRAVEL]\n[STATS]\n";
-        cin >> action;
+        std::cin >> action;
 
         if (action == "ATTACK")
         {
@@ -53,7 +57,7 @@ int main()
         }
         else if (action == "STATS")
         {
-            character.stats_readback();
+            Character.stats_readback();
         }
         else 
         {
@@ -66,7 +70,7 @@ int main()
 
 
 
-    cin >> x;
+    std::cin >> x;
 
 
 
@@ -74,7 +78,7 @@ int main()
     
 
    
-    
+    */
     return 0;
 }
 
