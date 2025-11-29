@@ -18,6 +18,7 @@ class Character
     int base_strength = 10;
     int base_defense = 10;
     int gold = 0;
+
     
 
 
@@ -26,6 +27,7 @@ class Character
 
 
     public:
+    Character() = default;  // Default constructor
     void Create();
     void Character_Readback();
     void starting_stats();
@@ -59,11 +61,6 @@ class Character
         int current_defense;
         int current_gold;
         
-        int base_health;
-        int base_strength;
-        int base_defense;
-        int level;
-        int gold = 0;
     
 
 };

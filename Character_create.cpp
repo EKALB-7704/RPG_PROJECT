@@ -223,6 +223,7 @@ void Character::Create()
     Gender();
     Race();
     Class_();
+    starting_stats();
 }
 
 void Character::Character_Readback()
