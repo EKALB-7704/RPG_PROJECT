@@ -1,6 +1,6 @@
 #include "Game.h"
 #include "Area.h"
-#include "Character_create.h"
+#include "Character.h"
 #include <iostream>
 using namespace std;
 
