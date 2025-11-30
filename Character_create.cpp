@@ -273,3 +273,16 @@ void Character::stats_readback()
 
 }
 
+void Character::create_prompt()
+
+{
+    std::cout << "Would you like to create a character?  [Y/N]\n";
+    std::cin >> Create_choice;
+    if (Create_choice == "Y")
+    {
+    Create();
+    }
+    
+        
+    
+}

@@ -11,14 +11,14 @@ int main()
     int x;
     string action = "action";
     cin >> action;
-    /*bool Program_running = true; // bool to create loops to run always while the program is running
+    bool Program_running = true; // bool to create loops to run always while the program is running
     bool Create_character;
 
 
     
     Game game;
     Area area;
-    Character Character;
+    Character character;
     Encounters encounters;
    
 
@@ -27,7 +27,7 @@ int main()
     cout << "\nGame startup complete! " << endl;
 
     //Character.create_prompt();
-    Character.Create();
+    character.Create();
   
 
 
@@ -57,7 +57,7 @@ int main()
         }
         else if (action == "STATS")
         {
-            Character.stats_readback();
+            character.stats_readback();
         }
         else 
         {
@@ -78,7 +78,7 @@ int main()
     
 
    
-    */
+    
     return 0;
 }
 
