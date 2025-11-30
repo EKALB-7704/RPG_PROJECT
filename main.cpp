@@ -10,7 +10,6 @@ int main()
 {
     int x;
     string action = "action";
-    cin >> action;
     bool Program_running = true; // bool to create loops to run always while the program is running
     bool Create_character;
 
@@ -26,8 +25,8 @@ int main()
 
     cout << "\nGame startup complete! " << endl;
 
-    //Character.create_prompt();
-    character.Create();
+    character.create_prompt();
+ 
   
 
 
