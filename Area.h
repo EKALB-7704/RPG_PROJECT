@@ -11,6 +11,7 @@ class Area
     
 
     public:
+    void starting_location(Character& character);
     void travel();
     void current_area();
     string destination;
