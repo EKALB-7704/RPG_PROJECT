@@ -214,6 +214,28 @@ void Player::Class_()
         }
     } 
 }
+void Player::quest()
+{
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << string(40, ' ') << "Finally will you accept the quest to defeat the skeleton king " << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << string(33, ' ') << " (1)|Defeat Skeleton King| (2)|No Quest|           " << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "Select your starting quest?: ";
+    int quest_choice;
+    cin >> quest_choice;
+    switch (quest_choice) {
+        case 1: quest_choice = 1;
+            cout << "Beware the skeleton king." << endl;
+            break;
+        case 2: quest_choice = 2;
+            cout << "I wish you luck." << endl;
+            break;
+        default:
+            cout << "Invalid choice. No quest selected." << endl;
+            break;
+    }
+}
 
 void Player::Create()
 {
@@ -222,6 +244,7 @@ void Player::Create()
     Gender();
     Race();
     Class_();
+    quest();
     starting_stats();
 }
 

@@ -5,26 +5,49 @@
 
 // Implementations of store class member functions.
 // The interactive loop and input handling should be placed in main() or another controller file.
-
+int choice;
 void store::town(Player &player)
-{
-    
-   store_menu();
-   std::cin >> choice;
-   if (choice = 1)
-   {
-    buy_potion( player.gold, player.hp);
-   }
-   
+{ display_gold(player.gold);
+store_menu();
+std::cin >> choice;
+if (choice == 1)
+{    buy_potion(player.gold, player.potion_no);
 }
+else if (choice == 2)
+{
+    buy_sword(player.gold, player.attack);
+}
+else if (choice == 3)
+{
+    buy_shield(player.gold, player.defence);
+}
+else
+{   
+    std::cout << "Invalid choice, please try again.\n";
+}
+}  
+
 void store::store_menu()
 {
+std::cout << "==========================================================================================================\n";
+std::cout << "          <Shop> Welcome to the store! What would you like to buy? \n";
+std::cout << " (1) Potion                                 " << potion_price << " gold                               Heals 20HP\n";
+std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                                +20 DEF\n";
+std::cout << " (3) Sword Upgrade                          " << sword_price << " gold                                +20 ATK\n";
+std::cout << "==========================================================================================================\n";
+
+std::cout << "==========================================================================================================\n";
+               
+std::cout << "==========================================================================================================\n";
+
     std::cout << "Welcome to the store! What would you like to buy? \n";
-    std::cout << "[1] Potion - " << potion_price << " gold\n";
-    std::cout << "[2] Sword - " << sword_price << " gold\n";
-    std::cout << "[3] Shield - " << shield_price << " gold\n";
+ 
 }
 
+void display_gold(int &gold)
+{
+      std::cout << "You have " << gold << " gold\n";
+}
 void store::buy_potion(int &gold, int &potions)
 {
     if (gold >= potion_price)
