@@ -6,9 +6,10 @@ using namespace std;
 
 Player::Player(string n) {
     name = n;
-    maxHP = 30;
+    maxHP = health;
     hp = maxHP;
-    attack = 8;
+    attack = current_attack;
+    defence = current_defence;
     level = 1;
     level_reference = level-1;
     exp = 0;
@@ -53,9 +54,10 @@ void Player::gainExp(int amount) {
     {
         level++;
         exp = 0;
-        maxHP += 10;
+        health += 10;
         attack += 2;
-        hp = maxHP;
+        defence +=2;
+        hp = health;
         maxStamina = level;
         stamina = maxStamina;
         cout << "LEVEL UP! You are now level " << level << "!\n";
