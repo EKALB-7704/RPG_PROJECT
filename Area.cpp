@@ -8,7 +8,7 @@ void Area::travel()
 {
     
     std::cout << "Where would you like to go? " << endl;
-    std::cout << "[SWAMP]  [FOREST]  [DESERT]  [MOUNTAIN]" << endl;
+    std::cout << "1.SWAMP  2.FOREST  3.DESERT  4.MOUNTAIN" << endl;
     std::cin >> destination;
     location = destination;
     std::cout << "Travelling to " << destination << endl;
