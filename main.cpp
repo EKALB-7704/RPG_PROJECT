@@ -1,103 +1,165 @@
-
-#include "Area.h"
-#include "Character_create.h"
-#include "Encounters.h"
+#include <fstream>
 #include <iostream>
-#include <string>
+#include <cstdlib>
+#include <ctime>
+#include "player.h"
+#include "Monster.h"
+#include "save_system.h"
+#include "Store.h"
 using namespace std;
 
-int main()
-{
-    int x;
-    string action = "action";
-    bool Program_running = true; // bool to create loops to run always while the program is running
-    bool Create_character;
-
-
-    
-    Game game;
-    Area area;
-    Character character;
-    Encounters encounters;
-   
-
-    //game.Run();
-
-    cout << "\nGame startup complete! " << endl;
-
-    character.create_prompt();
-
-int quest;
-    cout << "Welcome player do you accept the quest to defeat the dragon king?" << endl;
-    cout << "(1) Accept Quest" << endl;
-    cout << "(2) Decline Quest" << endl;
-    cin >> quest;
- switch (quest)
- {
- case 1:quest = 1;
-    cout << "You have accepted the quest!" << endl;
-     
-    break;
- case 2:quest = 2;
-    cout << "You have declined the quest, you will now exit the game." << endl;
-    return 0;
-    break;
- 
- default:
-    cout << "Invalid input, please enter 1 to accept or 2 to decline." << endl;
-    break;
- }
-  
 
 
 
-    while(Program_running = true)
-    {
-        //encounters.enemy_create();
-        encounters.random_encounter();
-        
 
-        cout << "What would you like to do? " << endl;
-        cout << "[ATTACK]\n[HEAL]\n[TRAVEL]\n[STATS]\n";
-        std::cin >> action;
+bool battle(Player &player);
+//void town(Player &player);
+void showMap();
 
-        if (action == "ATTACK")
-        {
-            cout << "You attacked!";
+
+/* =====================
+       COMBAT
+   ===================== */
+
+bool battle(Player &player) {
+    Monster m = getRandomMonster();
+
+    cout << "\n A wild " << m.name << " appears!\n";
+
+    while (player.hp > 0 && m.hp > 0) {
+        cout << "\nYour HP: " << player.hp << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
+        cout << m.name << " HP: " << m.hp << "\n";
+        cout << "Potions: " << player.potions << "\n";
+
+        cout << "\nChoose action:\n";
+        cout << "1. Attack\n";
+        cout << "2. Heal\n";
+        cout << "3. Special Attack\n";
+        cout << "> ";
+
+        int choice;
+        cin >> choice;
+
+        if (choice == 1) {
+            int dmg = rand() % player.attack + 1;
+            cout << "You deal " << dmg << " damage.\n";
+            m.hp -= dmg;
         }
-        else if (action == "HEAL")
-        {
-            cout << "You healed";
+        else if (choice == 2) {
+            player.heal();
         }
-        else if (action == "TRAVEL")
-        {
-            area.current_area();
-            area.travel();
+        else if (choice == 3) {
+            int dmg = player.specialAttack();
+            m.hp -= dmg;
         }
-        else if (action == "STATS")
-        {
-            character.stats_readback();
+        else {
+            cout << "Invalid choice!\n";
         }
-        else 
-        {
-            cout << "That was not an option!";
-            
+
+        if (m.hp > 0) {
+            int dmg = rand() % m.attack + 1;
+            cout << m.name << " hits you for " << dmg << "!\n";
+            player.hp -= dmg;
         }
     }
-    
+
+    if (player.hp <= 0) {
+        cout << "\n You were defeated...\n";
+        return false;
+    }
+
+    cout << "\n You defeated the " << m.name << "!\n";
+    player.gainExp(m.rewardExp);
+    player.gold += m.rewardGold;
+    cout << "You found " << m.rewardGold << " gold!\n";
+
+    return true;
+}
 
 
+/* =====================
+       TOWN / MAP
+   ===================== */
+
+void showMap() {
+    cout << "\n--- MAP ---\n";
+    cout << "1. Forest (Monsters)\n";
+    cout << "2. Town (Shop)\n";
+    cout << "3. Save Game\n";
+    cout << "4. Quit Game\n";
+}
 
 
-    std::cin >> x;
+/* =====================
+           MAIN
+   ===================== */
 
+int main() {
+  srand(time(0));
+    store store;
 
+    Player player("temp");  // temporary until load or new game
 
-    
-    
+    cout << "1. New Game\n";
+    cout << "2. Load Game\n";
+    cout << "> ";
 
-   
-    
+    int choice;
+    cin >> choice;
+
+    if (choice == 1) {
+        cout << "Enter your name: ";
+        cin >> player.name;
+    }
+    else if (choice == 2) {
+        if (!loadGame(player)) {
+            cout << "No save file found. Starting new game.\n";
+            cout << "Enter your name: ";
+            cin >> player.name;
+        } else {
+            cout << "Game loaded! Welcome back, " << player.name << ".\n";
+        }
+    }
+    else {
+        cout << "Invalid choice — starting new game.\n";
+        cout << "Enter your name: ";
+        cin >> player.name;
+    }
+
+    cout << "\nYour adventure begins...\n";
+
+    while (true) {
+        showMap();
+
+        cout << "\nChoose a location: ";
+        int choice;
+        cin >> choice;
+
+        if (choice == 1) {
+            if (!battle(player)) {
+                cout << "\nGAME OVER.\n";
+                break;
+            }
+        }
+        else if (choice == 2) {
+            store.town(player);
+        }
+        else if (choice == 3) 
+        {
+            if (saveGame(player))
+                cout << "Game saved!\n";
+            else
+                cout << "Error: Could not save.\n";
+        }
+        else if (choice == 4) {
+        cout << "Thanks for playing!\n";
+        break;
+        }
+        else {
+            cout << "Invalid choice.\n";
+        }
+    }
+
     return 0;
 }
 
