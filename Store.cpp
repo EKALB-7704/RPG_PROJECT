@@ -6,6 +6,17 @@
 // Implementations of store class member functions.
 // The interactive loop and input handling should be placed in main() or another controller file.
 
+void store::town(Player &player)
+{
+    
+   store_menu();
+   std::cin >> choice;
+   if (choice = 1)
+   {
+    buy_potion( player.gold, player.hp);
+   }
+   
+}
 void store::store_menu()
 {
     std::cout << "Welcome to the store! What would you like to buy? \n";
@@ -14,13 +25,13 @@ void store::store_menu()
     std::cout << "[3] Shield - " << shield_price << " gold\n";
 }
 
-void store::buy_potion(int &gold, int &current_health)
+void store::buy_potion(int &gold, int &potions)
 {
     if (gold >= potion_price)
     {
         gold -= potion_price;
-        current_health += 20; // Increase health by 20
-        std::cout << "You bought a potion! Health increased by 20.\n";
+        potions ++; // Increase potion by 1
+        std::cout << "You bought a potion!.\n";
     }
     else
     {
