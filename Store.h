@@ -25,6 +25,10 @@ class store
     void buy_sword(int &gold, int &current_strength);
     void buy_shield(int &gold, int &current_defense);
     void dialogue_cycle();
+     void display_gold(int &gold);
+    
 
+     
 
-};
+    
+   };

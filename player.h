@@ -1,6 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -16,6 +16,7 @@ class Player
     void Race();
     void Name();
     void Class_();
+    void quest();
 
     
 
@@ -55,6 +56,11 @@ class Player
     void starting_stats();
     void stats_readback();
     void create_prompt();
+
+    
+
+
+   
 
     
     
