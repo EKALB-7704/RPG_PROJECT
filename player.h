@@ -31,13 +31,12 @@ class Player
     int maxStamina;
     int stamina;
     
-    
     int current_attack, current_defence, current_health;
     int health,attack,defence;
     int base_health,base_attack,base_defence;
 
-    int sheild,sword,potion = 20;
-    int sheild_no = 0; 
+    int shield,sword,potion = 20;
+    int shield_no = 0; 
     int sword_no = 0;
     int potion_no = 0;
 
