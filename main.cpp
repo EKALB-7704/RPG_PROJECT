@@ -26,7 +26,27 @@ int main()
     cout << "\nGame startup complete! " << endl;
 
     character.create_prompt();
+
+int quest;
+    cout << "Welcome player do you accept the quest to defeat the dragon king?" << endl;
+    cout << "(1) Accept Quest" << endl;
+    cout << "(2) Decline Quest" << endl;
+    cin >> quest;
+ switch (quest)
+ {
+ case 1:quest = 1;
+    cout << "You have accepted the quest!" << endl;
+     
+    break;
+ case 2:quest = 2;
+    cout << "You have declined the quest, you will now exit the game." << endl;
+    return 0;
+    break;
  
+ default:
+    cout << "Invalid input, please enter 1 to accept or 2 to decline." << endl;
+    break;
+ }
   
 
 

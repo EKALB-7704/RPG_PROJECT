@@ -3,16 +3,18 @@
 #include <vector>
 #include "Character_create.h"
 
-using namespace std;
 
+using namespace std;
+Character player;
 class Encounters
 
 {
     private:
     int enemy_health;
     int enemy_attack;
-    int enemy_defense; 
+    int enemy_damage=(enemy_attack-player.current_defense);
     int LEVEL_REFERENCE = 1 ;
+    
 
 
     public:

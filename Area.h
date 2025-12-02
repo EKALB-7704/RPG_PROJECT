@@ -1,5 +1,6 @@
 #include <string>
 using namespace std;
+#include "Character_create.h"
 
 
 
@@ -11,7 +12,7 @@ class Area
     
 
     public:
-    void starting_location(Character& character);
+    //void starting_location(Character& race);
     void travel();
     void current_area();
     string destination;

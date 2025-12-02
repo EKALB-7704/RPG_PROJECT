@@ -56,10 +56,11 @@ class Character
         }
 
         //Stats
-        int current_health;
+        int current_health=10;
         int current_strength;
         int current_defense;
         int current_gold;
+        int potions;
         
     
 
