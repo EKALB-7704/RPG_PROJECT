@@ -12,6 +12,8 @@ using namespace std;
 
 
 
+
+
 bool battle(Player &player);
 //void town(Player &player);
 void showMap();
@@ -23,8 +25,12 @@ void showMap();
 
 bool battle(Player &player) {
     Monster m = getRandomMonster();
+    
+
 
     cout << "\n A wild " << m.name << " appears!\n";
+
+    m.Display_Monster();
 
     while (player.hp > 0 && m.hp > 0) {
         cout << "\nYour HP: " << player.hp << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
@@ -39,6 +45,7 @@ bool battle(Player &player) {
 
         int choice;
         cin >> choice;
+
 
         if (choice == 1) {
             int dmg = rand() % player.attack + 1;
@@ -61,6 +68,18 @@ bool battle(Player &player) {
             cout << m.name << " hits you for " << dmg << "!\n";
             player.hp -= dmg;
         }
+    
+        this_thread::sleep_for(chrono::milliseconds(800));
+
+        const int linesPrinted = 32;
+
+        m.moveCursorUp(linesPrinted);
+        for (int i = 0; i < linesPrinted; i++) 
+        {
+            m.clearLine();
+            cout << endl;
+        }
+        m.moveCursorUp(linesPrinted);
     }
 
     if (player.hp <= 0) {

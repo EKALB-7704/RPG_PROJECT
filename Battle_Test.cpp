@@ -2,6 +2,9 @@
 #include <string>
 #include <thread>
 #include <chrono>
+
+#include "Monster.h"
+
 using namespace std;
 
 void moveCursorUp(int n) {
