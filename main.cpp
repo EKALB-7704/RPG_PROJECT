@@ -127,8 +127,7 @@ int main() {
     cin >> choice;
 
     if (choice == 1) {
-        cout << "Enter your name: ";
-        cin >> player.name;
+        player.Create();
     }
     else if (choice == 2) {
         if (!loadGame(player)) {

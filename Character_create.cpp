@@ -1,9 +1,11 @@
 #include "player.h"
+#include "Store.h"
 #include <iostream>
 #include <string>
 #include <limits>
 using namespace std;
 using std::string;
+
 
 
 void Player::Name()
@@ -238,36 +240,36 @@ void Player::starting_stats()
     // assume member 'Class' is an int where 1=warrior, 2=mage, 3=archer
     if (Class == 1) // warrior
     {
-        base_strength += 0;
-        base_defense += 5;
-        base_health += 20;
+        base_attack = 5;
+        base_defence = 10;
+        base_health = 40;
     }
     else if (Class == 2) // mage
     {
-        base_strength += 5;
-        base_defense -= 5;
-        base_health += 0;
+        base_attack = 10;
+        base_defence = 5;
+        base_health = 30;
     }
     else if (Class == 3) // archer
     {
-        base_strength += 0;
-        base_defense += 0;
-        base_health += 25;
+        base_attack = 10;
+        base_defence = 5;
+        base_health = 20;
     }
 
     // compute current stats once
-    current_strength = base_strength + (level * 1);
-    current_defense = base_defense + (level * 1);
-    hp = base_health + (level * 5);
+    attack = base_attack + (level_reference * 1) + (sword_no * sword);
+    defence = base_defence + (level_reference * 1) + (sheild_no * sheild);
+    health = base_health + (level_reference * 5) + (potion_no * potion);
 
 }
 void Player::stats_readback()
 {
   
 
-        std::cout << " Strength: " << current_strength << std::endl;
-        std::cout << " Defense: " << current_defense << std::endl;
-        std::cout << " Health: " << hp << std::endl;
+        std::cout << " Strength: " << attack << std::endl;
+        std::cout << " Defense: " << defence << std::endl;
+        std::cout << " Health: " << health << std::endl;
         std::cout << " Level: " << level << std::endl;
         std::cout << " Gold: " << gold << std::endl;
 

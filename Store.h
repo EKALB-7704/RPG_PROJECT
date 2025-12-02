@@ -15,6 +15,9 @@ class store
     int sword_price = 50;
     int shield_price = 40;
 
+   
+
+
     public:
     void store_menu();
     void town(Player &player);
@@ -22,4 +25,6 @@ class store
     void buy_sword(int &gold, int &current_strength);
     void buy_shield(int &gold, int &current_defense);
     void dialogue_cycle();
+
+
 };

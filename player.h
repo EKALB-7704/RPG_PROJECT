@@ -24,14 +24,25 @@ class Player
     public:
     string name;
     int hp, maxHP;
-    int attack;
     int level;
+    int level_reference;
     int exp;
-    int potions;
     int gold;
     int maxStamina;
     int stamina;
-    int current_strength, current_defense;
+    
+    
+    int current_attack, current_defence, current_health;
+    int health,attack,defence;
+    int base_health,base_attack,base_defence;
+
+    int sheild,sword,potion = 20;
+    int sheild_no = 0; 
+    int sword_no = 0;
+    int potion_no = 0;
+
+
+
 
 
     Player(string n);
@@ -47,9 +58,6 @@ class Player
     void create_prompt();
 
     
-    int base_health= 100;
-    int base_strength = 10;
-    int base_defense = 10;
     
     int age;
     int Class;

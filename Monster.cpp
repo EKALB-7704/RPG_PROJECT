@@ -1,6 +1,12 @@
 #include "Monster.h"
 #include "player.h"
 #include <cstdlib>
+#include <chrono>
+#include <thread>
+#include <iostream>
+using namespace std;
+#include <string>
+
 
 #include <iostream>
 
@@ -20,6 +26,7 @@ Monster getRandomMonster() {
     if (r == 0) return Monster("Goblin", 20, 5, 10, 5);
     if (r == 1) return Monster("Skeleton", 25, 6, 15, 8);
     return Monster("Orc", 30, 8, 20, 12);
+ 
 }
 
 void Monster::Display_Monster()
