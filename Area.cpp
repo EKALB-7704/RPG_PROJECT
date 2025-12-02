@@ -1,7 +1,7 @@
 #include "Area.h"
 #include <iostream>
 #include <string>
-#include <Character_create.h>
+#include "player.h"
 using namespace std;
 
 void Area::travel()

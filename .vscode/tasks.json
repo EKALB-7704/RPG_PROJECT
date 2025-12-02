@@ -11,6 +11,11 @@
                 "${workspaceFolder}\\Monster.cpp",
                 "${workspaceFolder}\\player.cpp",
                 "${workspaceFolder}\\Store.cpp",
+                "${workspaceFolder}\\Encounters.cpp",
+                "${workspaceFolder}\\Area.cpp",
+                "${workspaceFolder}\\Battle_Test.cpp",
+                "${workspaceFolder}\\Main_Menu.cpp",
+                "${workspaceFolder}\\Character_create.cpp",
                 "-o",
                 "${fileDirname}\\RPG_GAME.exe"
             ],

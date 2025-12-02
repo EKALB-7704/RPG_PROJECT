@@ -1,5 +1,5 @@
 
-#include "Player.h"
+#include "player.h"
 #include <iostream>
 #include <cstdlib>
 using namespace std;

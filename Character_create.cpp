@@ -1,4 +1,4 @@
-#include "Character_create.h"
+#include "player.h"
 #include <iostream>
 #include <string>
 #include <limits>
@@ -6,7 +6,7 @@ using namespace std;
 using std::string;
 
 
-void Character::Name()
+void Player::Name()
 {
     cout << "========================================================================================================================" << endl;
         cout << string(40, ' ') << "Welcome to the Character Creation Screen" << endl;
@@ -15,7 +15,7 @@ void Character::Name()
     cin >> name;
 }
 
-void Character::Age()
+void Player::Age()
 {
     bool character_confirmed = false;
 
@@ -61,7 +61,7 @@ void Character::Age()
     }
 }
 
-void Character::Gender()
+void Player::Gender()
 {
     M = m = 0;
     F = f = 1;
@@ -106,7 +106,7 @@ if (gender[0] != 'M' && gender[0] != 'F' && gender[0] != 'm' && gender[0] != 'f'
     }
 }
 
-void Character::Race()
+void Player::Race()
 {
     bool character_confirmed = false;
         
@@ -155,7 +155,7 @@ void Character::Race()
     }
 }
 
-void Character::Class_()
+void Player::Class_()
 {
     bool character_confirmed = false;
         
@@ -216,7 +216,7 @@ void Character::Class_()
     } 
 }
 
-void Character::Create()
+void Player::Create()
 {
     Name();
     Age();
@@ -226,14 +226,14 @@ void Character::Create()
     starting_stats();
 }
 
-void Character::Character_Readback()
+void Player::Character_Readback()
 {
     std::cout << "Character Created! \n";
     std::cout << "you are a " << age << " year old " << gender << " " << race << " named " << name << endl; 
 }
 //This is as far as I got for the character creator
 
-void Character::starting_stats()
+void Player::starting_stats()
 {
     // assume member 'Class' is an int where 1=warrior, 2=mage, 3=archer
     if (Class == 1) // warrior
@@ -258,22 +258,22 @@ void Character::starting_stats()
     // compute current stats once
     current_strength = base_strength + (level * 1);
     current_defense = base_defense + (level * 1);
-    current_health = base_health + (level * 5);
+    hp = base_health + (level * 5);
 
 }
-void Character::stats_readback()
+void Player::stats_readback()
 {
   
 
         std::cout << " Strength: " << current_strength << std::endl;
         std::cout << " Defense: " << current_defense << std::endl;
-        std::cout << " Health: " << current_health << std::endl;
+        std::cout << " Health: " << hp << std::endl;
         std::cout << " Level: " << level << std::endl;
-        std::cout << " Gold: " << current_gold << std::endl;
+        std::cout << " Gold: " << gold << std::endl;
 
 }
 
-void Character::create_prompt()
+void Player::create_prompt()
 
 {
     std::cout << "Would you like to create a character?  [Y/N]\n";

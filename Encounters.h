@@ -1,11 +1,11 @@
 #pragma once 
 #include <string>
 #include <vector>
-#include "Character_create.h"
+#include "player.h"
 
 
 using namespace std;
-Character player;
+Player player;
 class Encounters
 
 {
