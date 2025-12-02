@@ -10,6 +10,7 @@ Player::Player(string n) {
     hp = maxHP;
     attack = 8;
     level = 1;
+    level_reference = level-1;
     exp = 0;
     potions = 3;
     maxStamina = level;
