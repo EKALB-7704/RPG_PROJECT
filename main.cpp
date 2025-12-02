@@ -33,7 +33,7 @@ bool battle(Player &player) {
     
 
     while (player.hp > 0 && m.hp > 0) {
-        m.Display_Skeleton();
+        m.Display_Monster();
         cout << "\nYour HP: " << player.hp << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << m.name << " HP: " << m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";

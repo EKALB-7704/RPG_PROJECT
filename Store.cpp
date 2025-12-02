@@ -13,7 +13,7 @@ void store::town(Player &player)
    std::cin >> choice;
    if (choice = 1)
    {
-    buy_potion( player.gold, player.hp);
+    buy_potion( player.gold, player.potion);
    }
    
 }
