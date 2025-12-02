@@ -12,17 +12,17 @@ Player::Player(string n) {
     level = 1;
     level_reference = level-1;
     exp = 0;
-    potions = 3;
+    potion = 3;
     maxStamina = level;
     stamina = maxStamina;
     gold = 0;
 }
 
 void Player::heal() {
-    if (potions > 0) {
+    if (potion > 0) {
         hp += 12;
         if (hp > maxHP) hp = maxHP;
-        potions--;
+        potion--;
         cout << "You healed 12 HP.\n";
     } else {
         cout << "No potions left!\n";

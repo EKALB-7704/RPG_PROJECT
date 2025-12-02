@@ -23,7 +23,7 @@ bool saveGame(const Player &player)
     file << player.attack << "\n";
     file << player.level << "\n";
     file << player.exp << "\n";
-    file << player.potions << "\n";
+    file << player.potion << "\n";
     file << player.gold << "\n";
 
     file.close();
@@ -47,7 +47,7 @@ bool loadGame(Player &player)
     file >> player.attack;
     file >> player.level;
     file >> player.exp;
-    file >> player.potions;
+    file >> player.potion;
     file >> player.gold;
 
     file.close();

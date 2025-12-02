@@ -12,7 +12,7 @@ class Encounters
     private:
     int enemy_health;
     int enemy_attack;
-    int enemy_damage=(enemy_attack-player.current_defense);
+    int enemy_damage=(enemy_attack-player.current_defence);
     int LEVEL_REFERENCE = 1 ;
     
 
