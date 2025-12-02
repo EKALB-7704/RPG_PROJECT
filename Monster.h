@@ -17,4 +17,15 @@ public:
 
 Monster getRandomMonster();
 
+class Battle;{
+public:
+    void engage(Player &player, Monster &monster);
+    void skeleton();
+    void goblin();
+    void orc();
+    void enemy();
+    void boss();
+
+}
+
 #endif
