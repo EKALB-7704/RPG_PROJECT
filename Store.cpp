@@ -23,6 +23,10 @@ else if (choice == 3)
     
     buy_sword(player.gold, player.current_attack);
 }
+else if (choice == 4)
+{
+    std::cout << "Thank you for visiting the store! Come again!\n";
+}
 else
 {   
     std::cout << "Invalid choice, please try again.\n";
@@ -36,6 +40,7 @@ std::cout << "          <Shop> Welcome to the store! What would you like to buy?
 std::cout << " (1) Potion                                 " << potion_price << " gold                              Heals 12HP\n";
 std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                               +5 DEF\n";
 std::cout << " (3) Sword Upgrade                          " << sword_price << " gold                                +5 ATK\n";
+std::cout << " (4) Exit Store                                                            \n";
 std::cout << "==========================================================================================================\n";
 
 std::cout << "==========================================================================================================\n";
