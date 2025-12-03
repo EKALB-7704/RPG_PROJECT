@@ -16,11 +16,11 @@ if (choice == 1)
 }
 else if (choice == 2)
 {
-    buy_sword(player.gold, player.attack);
+    buy_sword(player.gold, player.sword_no);
 }
 else if (choice == 3)
 {
-    buy_shield(player.gold, player.defence);
+    buy_shield(player.gold, player.shield_no);
 }
 else
 {   
@@ -32,8 +32,8 @@ void store::store_menu()
 {
 std::cout << "==========================================================================================================\n";
 std::cout << "          <Shop> Welcome to the store! What would you like to buy? \n";
-std::cout << " (1) Potion                                 " << potion_price << " gold                               Heals 20HP\n";
-std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                                +20 DEF\n";
+std::cout << " (1) Potion                                 " << potion_price << " gold                              Heals 20HP\n";
+std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                               +20 DEF\n";
 std::cout << " (3) Sword Upgrade                          " << sword_price << " gold                                +20 ATK\n";
 std::cout << "==========================================================================================================\n";
 
