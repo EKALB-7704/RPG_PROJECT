@@ -22,12 +22,30 @@ Monster::Monster(string n, int h, int a, int xp, int g) {
     rewardGold = g;
 }
 
-Monster getRandomMonster() {
-    int r = rand() % 3;
+Monster returnOpponent(int &level)
+{
+    if (level >= 6)
+    {
+        return getBoss();
+    }
+    
+    
+    return getRandomMonster();
+    
+}
 
-    if (r == 0) return Monster("Skeleton Wolf", 20, 4, 10, 20);
-    if (r == 1) return Monster("Skeleton", 25, 5, 15, 30);
-    return Monster("Giant Skeleton", 30, 6, 15, 40);
+Monster getBoss()
+{
+    return Monster("Skeleton king", 200, 20, 100, 4000);
+}
+
+Monster getRandomMonster() {
+    int r = rand() % 10;
+
+    if (r >= 0 && r <= 3 ) return Monster("Skeleton Minion", 20, 4, 10, 15);
+    if (r > 4 && r <= 6) return Monster("Skeleton Soldier", 25, 5, 15, 20);
+    if (r > 7 && r <= 8) return Monster("Skeleton Knight", 30, 10, 25, 30);
+    return Monster("Skeleton Giant", 45, 7, 30, 40);
  
 }
 
