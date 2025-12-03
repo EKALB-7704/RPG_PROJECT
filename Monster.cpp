@@ -1,6 +1,5 @@
 #include "Monster.h"
 #include "player.h"
-#include "Character_create.cpp"
 #include <cstdlib>
 #include <chrono>
 #include <thread>
