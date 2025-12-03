@@ -4,20 +4,38 @@
 #include "player.h"
 using namespace std;
 
-void Area::travel()
-{
-    
-    std::cout << "Where would you like to go? " << endl;
-    std::cout << "1.SWAMP  2.FOREST  3.DESERT  4.MOUNTAIN" << endl;
-    std::cin >> destination;
-    location = destination;
-    std::cout << "Travelling to " << destination << endl;
-}
+
 
 void Area::current_area()
 {
     cout << "you are currently in " << "[" << location << "]" << endl; 
 
+}
+bool Area::travel(Player &player)
+{
+    cout << "Where would you like to go?" << endl;
+    cout << "1. FOREST" << endl;
+    cout << "2. TOWN" << endl;
+    cout << "3. MOUNTAINS" << endl;
+    cout << "4. SWAMP" << endl;
+    cout << "Enter the name of your destination: ";
+    cin >> destination;
+    if (destination == 1)
+        location = "FOREST";
+    else if (destination == 2)
+        location = "TOWN";
+    else if (destination == 3)
+        location = "MOUNTAINS";
+    else if (destination == 4)
+        location = "SWAMP";
+    else
+    {
+        cout << "Invalid destination. Staying in current location." << endl;
+      
+    }
+
+    cout << "You have traveled to the " << location << "." << endl;
+    return true;
 }
 //void Area::starting_location(Character& race)
 //{
