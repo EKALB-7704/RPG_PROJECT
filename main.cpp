@@ -30,9 +30,10 @@ bool battle(Player &player) {
 
     cout << "\n A wild " << m.name << " appears!\n";
 
-    m.Display_Monster();
+    
 
     while (player.hp > 0 && m.hp > 0) {
+        m.Display_Monster();
         cout << "\nYour HP: " << player.hp << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << m.name << " HP: " << m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";
@@ -59,6 +60,7 @@ bool battle(Player &player) {
             int dmg = player.specialAttack();
             m.hp -= dmg;
         }
+        
         else {
             cout << "Invalid choice!\n";
         }
@@ -69,17 +71,7 @@ bool battle(Player &player) {
             player.hp -= dmg;
         }
     
-        this_thread::sleep_for(chrono::milliseconds(800));
-
-        const int linesPrinted = 32;
-
-        m.moveCursorUp(linesPrinted);
-        for (int i = 0; i < linesPrinted; i++) 
-        {
-            m.clearLine();
-            cout << endl;
-        }
-        m.moveCursorUp(linesPrinted);
+       
     }
 
     if (player.hp <= 0) {
@@ -104,8 +96,9 @@ void showMap() {
     cout << "\n--- MAP ---\n";
     cout << "1. Forest (Monsters)\n";
     cout << "2. Town (Shop)\n";
-    cout << "3. Save Game\n";
-    cout << "4. Quit Game\n";
+    cout << "3. Stats\n";
+    cout << "4. Save Game\n";
+    cout << "5. Quit Game\n";
 }
 
 
@@ -162,14 +155,18 @@ int main() {
         else if (choice == 2) {
             store.town(player);
         }
-        else if (choice == 3) 
+        else if (choice == 3)
+        {
+            player.stats_readback();
+        }
+        else if (choice == 4) 
         {
             if (saveGame(player))
                 cout << "Game saved!\n";
             else
                 cout << "Error: Could not save.\n";
         }
-        else if (choice == 4) {
+        else if (choice == 5) {
         cout << "Thanks for playing!\n";
         break;
         }

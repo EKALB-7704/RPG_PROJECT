@@ -31,10 +31,10 @@ Monster getRandomMonster() {
 
 void Monster::Display_Monster()
 {
+        cout << endl << endl << endl << endl << endl << endl << endl ;
         cout << "==========================================================================================================\n";
         cout << "                                             <<current_location>>\n";
         cout << "                                                <<Enemy_type>>\n";
-
         cout << "==========================================================================================================\n";
         cout << "\n";
         cout << "                                                      .-.\n";
@@ -53,7 +53,6 @@ void Monster::Display_Monster()
         cout << "                                                    ==' '==\n";
         cout << "\n";
         cout << "==========================================================================================================\n";
-        
         cout << "==========================================================================================================\n";
     
 
@@ -61,7 +60,7 @@ void Monster::Display_Monster()
 
 }
 
-void Monster::moveCursorUp(int n) 
+/*void Monster::moveCursorUp(int n) 
 {
     cout << "\033[" << n << "A";
 }
@@ -69,3 +68,4 @@ void Monster::clearLine()
 {
     cout << "\33[2K\r";
 }
+*/

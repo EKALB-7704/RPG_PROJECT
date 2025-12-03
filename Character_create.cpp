@@ -68,10 +68,7 @@ void Player::Gender()
     M = m = 0;
     F = f = 1;
     bool character_confirmed = false;
-        
-        cout << "========================================================================================================================" << endl;
-        cout << string(40, ' ') << "Welcome to the Character Creation Screen" << endl;
-        cout << "========================================================================================================================" << endl; 
+    
     while (character_confirmed == false) {
         cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
         cout << string(46, ' ') << "Character Gender Selection" << endl;
@@ -217,6 +214,28 @@ void Player::Class_()
         }
     } 
 }
+void Player::quest()
+{
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << string(40, ' ') << "Finally will you accept the quest to defeat the skeleton king " << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << string(33, ' ') << " (1)|Defeat Skeleton King| (2)|No Quest|           " << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "Select your starting quest?: ";
+    int quest_choice;
+    cin >> quest_choice;
+    switch (quest_choice) {
+        case 1: quest_choice = 1;
+            cout << "Beware the skeleton king." << endl;
+            break;
+        case 2: quest_choice = 2;
+            cout << "I wish you luck." << endl;
+            break;
+        default:
+            cout << "Invalid choice. No quest selected." << endl;
+            break;
+    }
+}
 
 void Player::Create()
 {
@@ -225,6 +244,7 @@ void Player::Create()
     Gender();
     Race();
     Class_();
+    quest();
     starting_stats();
 }
 
@@ -259,7 +279,7 @@ void Player::starting_stats()
 
     // compute current stats once
     attack = base_attack + (level_reference * 1) + (sword_no * sword);
-    defence = base_defence + (level_reference * 1) + (sheild_no * sheild);
+    defence = base_defence + (level_reference * 1) + (shield_no * shield);
     health = base_health + (level_reference * 5) + (potion_no * potion);
 
 }
@@ -268,8 +288,8 @@ void Player::stats_readback()
   
 
         std::cout << " Strength: " << attack << std::endl;
-        std::cout << " Defense: " << defence << std::endl;
-        std::cout << " Health: " << health << std::endl;
+        std::cout << " Defence: " << defence << std::endl;
+        std::cout << " Health: " << hp << std::endl;
         std::cout << " Level: " << level << std::endl;
         std::cout << " Gold: " << gold << std::endl;
 

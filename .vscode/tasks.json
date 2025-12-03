@@ -17,10 +17,10 @@
                 "${workspaceFolder}\\Main_Menu.cpp",
                 "${workspaceFolder}\\Character_create.cpp",
                 "-o",
-                "${fileDirname}\\RPG_GAME.exe"
+                "${workspaceFolder}\\RPG_GAME.exe"
             ],
             "options": {
-                "cwd": "c:\\Program Files\\CodeBlocks\\MinGW\\bin"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
