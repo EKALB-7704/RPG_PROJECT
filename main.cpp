@@ -95,7 +95,7 @@ bool battle(Player &player) {
 
 void showMap() {
     cout << "\n--- MAP ---\n";
-    cout << "1. Forest (Monsters)\n";
+    cout << "1. Fight \n";
     cout << "2. Town (Shop)\n";
     cout << "3. Stats\n";
     cout << "4. travel\n";
@@ -175,7 +175,7 @@ int main() {
         }
         else if (choice ==4)
         {
-            Area area;
+           Area area;
             area.travel(player);
         }
         else {

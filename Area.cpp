@@ -11,7 +11,7 @@ void Area::current_area()
     cout << "you are currently in " << "[" << location << "]" << endl; 
 
 }
-bool Area::travel(Player &player)
+void Area::travel(Player &player)
 {
     cout << "Where would you like to go?" << endl;
     cout << "1. FOREST" << endl;
@@ -35,7 +35,7 @@ bool Area::travel(Player &player)
     }
 
     cout << "You have traveled to the " << location << "." << endl;
-    return true;
+    ;
 }
 //void Area::starting_location(Character& race)
 //{
