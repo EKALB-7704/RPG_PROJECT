@@ -10,10 +10,15 @@
 using namespace std;
 
 /*Checklist of shit left to do.
-fix health scale -paul
+idiot-proof character create menu 
+fix health scale -paul DONE
 fix special attack -paul DONE
 fix stats loading from save issue -paul DONE
 fix load save when no save exists issue - paul DONE
+fix max health display -paul
+implement area specific enemies -callum
+add new enemies -anyone
+adjust odds for enemies to spawn -anyone
 make boss summon function - callum
 write document for game path to be presented.
 
@@ -23,12 +28,12 @@ game loop is fully functional
 
 */
 
-int a=1;
+int a=1;// integer used for empty area flag
 
 
-
+//Declare battle and map functions
 bool battle(Player &player);
-//void town(Player &player);
+
 void showMap();
 
 
@@ -37,21 +42,25 @@ void showMap();
    ===================== */
 
 bool battle(Player &player) {
-    Monster m = getRandomMonster();
+    //Pull random mosnter to fight and display it
+    Monster m = getRandomMonster(); 
     
 
 
     cout << "\n A wild " << m.name << " appears!\n";
 
     
-
+    //Keep combat loop running while both player 
+    //and monster are alive (health > 0)
     while (player.current_health > 0 && m.hp > 0) 
     {
+        //Display monster and player current stats(Health,stamina etc.)
         m.Display_Monster();
         cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << m.name << " HP: " << m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";
 
+        //Display action options and take in usier input
         cout << "\nChoose action:\n";
         cout << "1. Attack\n";
         cout << "2. Heal\n";
@@ -62,23 +71,33 @@ bool battle(Player &player) {
         cin >> choice;
 
 
-        if (choice == 1) {
+        if (choice == 1) // 1 = attack
+        {
+           
+            //Do calc for damage dealt to mosnter
             int dmg = rand() % player.current_attack + 1;
             cout << "You deal " << dmg << " damage.\n";
             m.hp -= dmg;
         }
-        else if (choice == 2) {
+        else if (choice == 2) // 2 = consume potion to heal
+        {
+            //Run heal function 
             player.heal();
         }
-        else if (choice == 3) {
+        else if (choice == 3) // 3 = special attack
+        {
+            //Run special attack function
             int dmg = player.specialAttack();
             m.hp -= dmg;
         }
         
-        else {
-            cout << "Invalid choice!\n";
+        else 
+        {
+            //If user input is not one of the assigned options output the following
+            cout << "Invalid choice! you stumble!\n";
         }
 
+        //Monster damage dealt to player calc
         if (m.hp > 0) {
             int dmg = rand() % m.attack + 1;
             cout << m.name << " hits you for " << dmg << "!\n";
@@ -88,12 +107,13 @@ bool battle(Player &player) {
        
     }
 
+    //conditon check to see if player is dead
     if (player.current_health <= 0) 
     {
         cout << "\n You were defeated...\n";
         return false;
     }
-
+    //Victory message and reward calc for defeating a mosnter
     cout << "\n You defeated the " << m.name << "!\n";
     player.gainExp(m.rewardExp);
     player.gold += m.rewardGold;
@@ -107,12 +127,13 @@ bool battle(Player &player) {
        TOWN / MAP
    ===================== */
 
-void showMap() {
+void showMap() //map function
+{
     cout << "\n--- MAP ---\n";
     cout << "1. Fight \n";
     cout << "2. Town (Shop)\n";
     cout << "3. Stats\n";
-   cout << "4. travel\n";
+    cout << "4. travel\n";
     cout << "5. Save Game\n";
     cout << "6. Quit Game\n";
 }
@@ -122,9 +143,11 @@ void showMap() {
            MAIN
    ===================== */
 
-int main() {
-  srand(time(0));
-    store store;
+int main() // set main loop
+{
+
+    srand(time(0));
+    store store; 
     Area area;
 
     Player player("temp");  // temporary until load or new game
