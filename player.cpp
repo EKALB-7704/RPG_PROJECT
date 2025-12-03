@@ -57,6 +57,7 @@ void Player::gainExp(int amount) {
         current_defence +=2;
         level_reference = level - 1;
         current_health = base_health + (10*level_reference); 
+        maxHP = current_health;
         maxStamina = level;
         stamina = maxStamina;
         cout << "LEVEL UP! You are now level " << level << "!\n";
