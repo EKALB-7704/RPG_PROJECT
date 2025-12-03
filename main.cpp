@@ -9,7 +9,18 @@
 #include "Area.h"
 using namespace std;
 
+/*Checklist of shit left to do.
+fix health scale -paul
+fix special attack -paul
+fix load save when no save exist issue - paul
+make boss summon function - callum
+write document for game path to be presented.
 
+after everything here is done do thorourgh check
+to remove any unnecessary code/files and ensure 
+game loop is fully functional
+
+*/
 
 int a=1;
 
