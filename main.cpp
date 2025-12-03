@@ -12,6 +12,7 @@ using namespace std;
 /*Checklist of shit left to do.
 fix health scale -paul
 fix special attack -paul DONE
+fix stats loading from save issue -paul DONE
 fix load save when no save exists issue - paul DONE
 make boss summon function - callum
 write document for game path to be presented.

@@ -57,7 +57,7 @@ void Player::gainExp(int amount) {
         
         current_attack += 2;
         current_defence +=2;
-         
+        level_reference = level - 1;
         current_health = base_health + (10*level_reference); 
         maxStamina = level;
         stamina = maxStamina;
