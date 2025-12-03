@@ -137,7 +137,7 @@ int main() {
         }
     }
     else {
-        cout << "Invalid choice — starting new game.\n";
+        cout << "Invalid choice â€” starting new game.\n";
         cout << "Enter your name: ";
         cin >> player.name;
     }
@@ -195,4 +195,5 @@ int main() {
 
     return 0;
 }
+
 
