@@ -164,21 +164,21 @@ void Player::Class_()
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl; 
    
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl; 
-    cout << string(36, ' ') << "|=============||========||=======||========||=======|" << endl;
-    cout << string(36, ' ') << "|             || Health || Melee || Shield || Greed |" << endl;
-    cout << string(36, ' ') << "|=============||========||=======||========||=======|" << endl;
-    cout << string(36, ' ') << "|             ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "| Warrior(1)  ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "|             ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "|=============||========||=======||========||=======|" << endl;
-    cout << string(36, ' ') << "|             ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "| Mage   (2)  ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "|             ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "|=============||========||=======||========||=======|" << endl;
-    cout << string(36, ' ') << "|             ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "| Archer (3)  ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "|             ||        ||       ||        ||       |" << endl;
-    cout << string(36, ' ') << "|=============||========||=======||========||=======|" << endl;
+    cout << string(36, ' ') << "|=============||========||=======||=======||" << endl;
+    cout << string(36, ' ') << "|             || Health ||  ATK  ||  DEF  ||" << endl;
+    cout << string(36, ' ') << "|=============||========||=======||=======||" << endl;
+    cout << string(36, ' ') << "|             ||        ||       ||       ||" << endl;
+    cout << string(36, ' ') << "| Warrior(1)  ||   40   ||  10   ||  15   ||" << endl;
+    cout << string(36, ' ') << "|             ||        ||       ||       ||" << endl;
+    cout << string(36, ' ') << "|=============||========||=======||=======||" << endl;
+    cout << string(36, ' ') << "|             ||        ||       ||       ||" << endl;
+    cout << string(36, ' ') << "| Mage   (2)  ||   30   ||  20   ||  10   ||" << endl;
+    cout << string(36, ' ') << "|             ||        ||       ||       ||" << endl;
+    cout << string(36, ' ') << "|=============||========||=======||=======||" << endl;
+    cout << string(36, ' ') << "|             ||        ||       ||       ||" << endl;
+    cout << string(36, ' ') << "| Archer (3)  ||   35   ||  15   ||  10   ||" << endl;
+    cout << string(36, ' ') << "|             ||        ||       ||       ||" << endl;
+    cout << string(36, ' ') << "|=============||========||=======||=======||" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 
     while (character_confirmed == false) {
@@ -260,21 +260,21 @@ void Player::starting_stats()
     // assume member 'Class' is an int where 1=warrior, 2=mage, 3=archer
     if (Class == 1) // warrior
     {
-        base_attack = 5;
-        base_defence = 10;
+        base_attack =10;
+        base_defence = 15;
         base_health = 40;
     }
     else if (Class == 2) // mage
     {
-        base_attack = 10;
-        base_defence = 5;
+        base_attack =20;
+        base_defence =10;
         base_health = 30;
     }
     else if (Class == 3) // archer
     {
-        base_attack = 10;
-        base_defence = 5;
-        base_health = 20;
+        base_attack =15;
+        base_defence = 10;
+        base_health = 35;
     }
 
     // compute current stats once
