@@ -260,24 +260,24 @@ void Player::starting_stats()
     // assume member 'Class' is an int where 1=warrior, 2=mage, 3=archer
     if (Class == 1) // warrior
     {
-        base_attack =10;
+        base_attack =7;
         base_defence = 15;
         base_health = 40;
         maxHP = 40;
     }
     else if (Class == 2) // mage
     {
-        base_attack =20;
-        base_defence =10;
+        base_attack = 12;
+        base_defence = 8;
         base_health = 30;
         maxHP = 30;
     }
     else if (Class == 3) // archer
     {
-        base_attack = 15;
-        base_defence = 10;
-        base_health = 35;
-        maxHP = 35;
+        base_attack = 10;
+        base_defence = 12;
+        base_health = 25;
+        maxHP = 25;
     }
 
     // compute current stats once

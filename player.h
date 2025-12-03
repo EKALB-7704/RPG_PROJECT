@@ -28,6 +28,7 @@ class Player
     int level;
     int level_reference;
     int exp;
+    int kill_count;
     int gold;
     int maxStamina;
     int stamina;

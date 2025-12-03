@@ -28,6 +28,7 @@ game loop is fully functional
 */
 
 int a=1;// integer used for empty area flag
+bool in_battle;
 
 
 //Declare battle and map functions
@@ -41,8 +42,10 @@ void showMap();
    ===================== */
 
 bool battle(Player &player) {
-    //Pull random mosnter to fight and display it
-    Monster m = getRandomMonster(); 
+    //Pull random monster to fight and display it
+
+    Monster m = returnOpponent(player.level);
+    m.Display_Monster();
     
 
 
@@ -54,7 +57,6 @@ bool battle(Player &player) {
     while (player.current_health > 0 && m.hp > 0) 
     {
         //Display monster and player current stats(Health,stamina etc.)
-        m.Display_Monster();
         cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << m.name << " HP: " << m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";
@@ -73,19 +75,22 @@ bool battle(Player &player) {
         if (choice == 1) // 1 = attack
         {
            
-            //Do calc for damage dealt to mosnter
+            //Do calc for damage dealt to monster
             int dmg = rand() % player.current_attack + 1;
+            m.Display_Monster();
             cout << "You deal " << dmg << " damage.\n";
             m.hp -= dmg;
         }
         else if (choice == 2) // 2 = consume potion to heal
         {
             //Run heal function 
+            m.Display_Monster();
             player.heal();
         }
         else if (choice == 3) // 3 = special attack
         {
             //Run special attack function
+            m.Display_Monster();
             int dmg = player.specialAttack();
             m.hp -= dmg;
         }
@@ -93,6 +98,7 @@ bool battle(Player &player) {
         else 
         {
             //If user input is not one of the assigned options output the following
+            m.Display_Monster();
             cout << "Invalid choice! you stumble!\n";
         }
 
@@ -100,7 +106,12 @@ bool battle(Player &player) {
         if (m.hp > 0) {
             int dmg = rand() % m.attack + 1;
             cout << m.name << " hits you for " << dmg << "!\n";
-            player.current_health -= dmg;
+            int true_dmg = (dmg - (player.current_defence % 4));
+            if (true_dmg > 0)
+            {
+                true_dmg = 0;
+            }
+            player.current_health -= true_dmg ;
         }
     
        
@@ -116,6 +127,7 @@ bool battle(Player &player) {
     cout << "\n You defeated the " << m.name << "!\n";
     player.gainExp(m.rewardExp);
     player.gold += m.rewardGold;
+    player.kill_count++;
     cout << "You found " << m.rewardGold << " gold!\n";
 
     return true;
