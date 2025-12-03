@@ -7,7 +7,8 @@
 // The interactive loop and input handling should be placed in main() or another controller file.
 int choice;
 void store::town(Player &player)
-{ display_gold(player.gold);
+{ 
+display_gold(player.gold);
 store_menu();
 std::cin >> choice;
 if (choice == 1)
@@ -44,7 +45,7 @@ std::cout << "==================================================================
  
 }
 
-void display_gold(int &gold)
+void store::display_gold(int &gold)
 {
       std::cout << "You have " << gold << " gold\n";
 }
