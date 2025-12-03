@@ -15,7 +15,7 @@ void Area::travel(Player &player)
 {
     cout << "Where would you like to go?" << endl;
     cout << "1. FOREST" << endl;
-    cout << "2. TOWN" << endl;
+    cout << "2. PLAINS" << endl;
     cout << "3. MOUNTAINS" << endl;
     cout << "4. SWAMP" << endl;
     cout << "Enter the name of your destination: ";
@@ -23,7 +23,7 @@ void Area::travel(Player &player)
     if (destination == 1)
         location = "FOREST";
     else if (destination == 2)
-        location = "TOWN";
+        location = "PLAINS";
     else if (destination == 3)
         location = "MOUNTAINS";
     else if (destination == 4)

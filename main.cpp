@@ -106,8 +106,8 @@ bool battle(Player &player) {
         if (m.hp > 0) {
             int dmg = rand() % m.attack + 1;
             cout << m.name << " hits you for " << dmg << "!\n";
-            int true_dmg = (dmg - (player.current_defence % 4));
-            if (true_dmg > 0)
+            int true_dmg = (dmg - (player.current_defence % 2));
+            if (true_dmg < 0)
             {
                 true_dmg = 0;
             }
