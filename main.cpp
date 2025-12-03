@@ -33,9 +33,10 @@ bool battle(Player &player) {
 
     
 
-    while (player.hp > 0 && m.hp > 0) {
+    while (player.current_health > 0 && m.hp > 0) 
+    {
         m.Display_Monster();
-        cout << "\nYour HP: " << player.hp << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
+        cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << m.name << " HP: " << m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";
 
@@ -50,7 +51,7 @@ bool battle(Player &player) {
 
 
         if (choice == 1) {
-            int dmg = rand() % player.attack + 1;
+            int dmg = rand() % player.current_attack + 1;
             cout << "You deal " << dmg << " damage.\n";
             m.hp -= dmg;
         }
@@ -69,13 +70,14 @@ bool battle(Player &player) {
         if (m.hp > 0) {
             int dmg = rand() % m.attack + 1;
             cout << m.name << " hits you for " << dmg << "!\n";
-            player.hp -= dmg;
+            player.current_health -= dmg;
         }
     
        
     }
 
-    if (player.hp <= 0) {
+    if (player.current_health <= 0) 
+    {
         cout << "\n You were defeated...\n";
         return false;
     }
@@ -135,7 +137,7 @@ int main() {
         }
     }
     else {
-        cout << "Invalid choice — starting new game.\n";
+        cout << "Invalid choice â€” starting new game.\n";
         cout << "Enter your name: ";
         cin >> player.name;
     }
@@ -193,4 +195,5 @@ int main() {
 
     return 0;
 }
+
 
