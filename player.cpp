@@ -6,8 +6,8 @@ using namespace std;
 
 Player::Player(string n) {
     name = n;
-    maxHP = health;
-    hp = maxHP;
+    maxHP = base_health;
+    current_health = maxHP;
     attack = current_attack;
     defence = current_defence;
     level = 1;
@@ -21,8 +21,8 @@ Player::Player(string n) {
 
 void Player::heal() {
     if (potion > 0) {
-        hp += 12;
-        if (hp > maxHP) hp = maxHP;
+        current_health += 12;
+        if (current_health > maxHP) current_health = maxHP;
         potion--;
         cout << "You healed 12 HP.\n";
     } else {
@@ -54,10 +54,11 @@ void Player::gainExp(int amount) {
     {
         level++;
         exp = 0;
-        health += 10;
-        attack += 2;
-        defence +=2;
-        hp = health;
+        
+        current_attack += 2;
+        current_defence +=2;
+        maxHP += 10*level_reference;
+        current_health = maxHP; 
         maxStamina = level;
         stamina = maxStamina;
         cout << "LEVEL UP! You are now level " << level << "!\n";

@@ -37,21 +37,5 @@ void Area::travel(Player &player)
     cout << "You have traveled to the " << location << "." << endl;
     ;
 }
-//void Area::starting_location(Character& race)
-//{
-  //  switch (character.race) {
-    //    case 1:
-      //      location = "SWAMP";
-        //    break;
-        //case 2:
-          //  location = "FOREST";
-            //break;
-        //case 3:
-          //  location = "MOUNTAINS";
-           // break;
-        //case 4:
-          //  location = "VILLAGE";
-            //break;
-    //}
-    //cout << "Your starting location is " << location << endl;
+
 
