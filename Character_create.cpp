@@ -221,7 +221,7 @@ void Player::quest()
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
     cout << string(40, ' ') << " (1)|Defeat Skeleton King| (2)|No Quest|           " << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "Select your starting quest?: ";
+    cout << "Do you accept?: ";
     int quest_choice;
     cin >> quest_choice;
     switch (quest_choice) {
@@ -298,16 +298,4 @@ void Player::stats_readback()
 
 }
 
-void Player::create_prompt()
 
-{
-    std::cout << "Would you like to create a character?  [Y/N]\n";
-    std::cin >> Create_choice;
-    if (Create_choice == "Y")
-    {
-    Create();
-    }
-    
-        
-    
-}
