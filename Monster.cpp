@@ -1,5 +1,6 @@
 #include "Monster.h"
 #include "player.h"
+#include "Character_create.cpp"
 #include <cstdlib>
 #include <chrono>
 #include <thread>
@@ -12,6 +13,8 @@ using namespace std;
 
 using namespace std;
 
+
+
 Monster::Monster(string n, int h, int a, int xp, int g) {
     name = n;
     hp = h;
@@ -23,9 +26,9 @@ Monster::Monster(string n, int h, int a, int xp, int g) {
 Monster getRandomMonster() {
     int r = rand() % 3;
 
-    if (r == 0) return Monster("Goblin", 20, 5, 10, 5);
-    if (r == 1) return Monster("Skeleton", 25, 6, 15, 8);
-    return Monster("Orc", 30, 8, 20, 12);
+    if (r == 0) return Monster("Skeleton Wolf", 20, 5, 10, 20);
+    if (r == 1) return Monster("Skeleton", 30, 6, 15, 30);
+    return Monster("Giant Skeleton", 50, 8, 15, 40);
  
 }
 
@@ -59,13 +62,3 @@ void Monster::Display_Monster()
    
 
 }
-
-/*void Monster::moveCursorUp(int n) 
-{
-    cout << "\033[" << n << "A";
-}
-void Monster::clearLine() 
-{
-    cout << "\33[2K\r";
-}
-*/

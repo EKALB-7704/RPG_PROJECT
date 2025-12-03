@@ -13,6 +13,8 @@ public:
     int rewardExp;
     int rewardGold;
 
+    
+
     Monster(string n, int h, int a, int xp, int g);
 
     void Display_Monster();
