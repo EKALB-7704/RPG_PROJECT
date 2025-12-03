@@ -11,8 +11,8 @@ using namespace std;
 
 /*Checklist of shit left to do.
 fix health scale -paul
-fix special attack -paul
-fix load save when no save exist issue - paul
+fix special attack -paul DONE
+fix load save when no save exists issue - paul DONE
 make boss summon function - callum
 write document for game path to be presented.
 
@@ -141,8 +141,7 @@ int main() {
     else if (choice == 2) {
         if (!loadGame(player)) {
             cout << "No save file found. Starting new game.\n";
-            cout << "Enter your name: ";
-            cin >> player.name;
+            player.Create();
         } else {
             cout << "Game loaded! Welcome back, " << player.name << ".\n";
         }

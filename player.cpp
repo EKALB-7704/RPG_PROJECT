@@ -33,7 +33,7 @@ void Player::heal() {
 int Player::specialAttack() {
     if (stamina > 0)
     {
-    int dmg = attack + (rand() % 6 + 4);
+    int dmg = current_attack + (rand() % 6 + 4);
     cout << "You unleash a POWER STRIKE for " << dmg << " damage!\n";
     stamina--;
     return dmg;
@@ -57,8 +57,8 @@ void Player::gainExp(int amount) {
         
         current_attack += 2;
         current_defence +=2;
-        maxHP += 10*level_reference;
-        current_health = maxHP; 
+         
+        current_health = base_health + (10*level_reference); 
         maxStamina = level;
         stamina = maxStamina;
         cout << "LEVEL UP! You are now level " << level << "!\n";
