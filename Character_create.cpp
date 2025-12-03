@@ -11,8 +11,8 @@ using std::string;
 void Player::Name()
 {
     cout << "========================================================================================================================" << endl;
-        cout << string(40, ' ') << "Welcome to the Character Creation Screen" << endl;
-        cout << "========================================================================================================================" << endl; 
+    cout << string(40, ' ') << "Welcome to the Character Creation Screen" << endl;
+    cout << "========================================================================================================================" << endl; 
     cout << "what is your name? ";
     cin >> name;
 }
@@ -22,9 +22,9 @@ void Player::Age()
     bool character_confirmed = false;
 
     cout<<"------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout<<string(33, ' ')<<"Next choose your characters age " << endl;
+    cout<<string(45, ' ')<<"Next choose your characters age " << endl;
     cout<<"------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout<<string(40, ' ')<<"(Min Age is 5 )" << endl;
+    cout<<string(48, ' ')<<"(Min Age is 5 )" << endl;
     cout<<"------------------------------------------------------------------------------------------------------------------------" << endl;
 
     while (character_confirmed == false) {
@@ -217,9 +217,9 @@ void Player::Class_()
 void Player::quest()
 {
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << string(40, ' ') << "Finally will you accept the quest to defeat the skeleton king " << endl;
+    cout << string(35, ' ') << "Finally will you accept the quest to defeat the skeleton king " << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << string(33, ' ') << " (1)|Defeat Skeleton King| (2)|No Quest|           " << endl;
+    cout << string(40, ' ') << " (1)|Defeat Skeleton King| (2)|No Quest|           " << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
     cout << "Select your starting quest?: ";
     int quest_choice;
