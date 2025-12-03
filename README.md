@@ -21,7 +21,7 @@ Press 1 for new game
 Press 2 to load game
 
 New game
-Accept the quest of dragon king
+Accept the quest to defeat the Skeleton King
 Enter your name 
 Enter age
 Pick race1,2,3
@@ -34,6 +34,7 @@ Encounter
 1 Attack 
 2 Heal 
 3 Special attack
+After you succsessfully defeat and enemy you will gain XP to level your charater and gold depending on the enemy defeated
 
 After encounter
 Displays rewards
@@ -42,3 +43,8 @@ Displays rewards
 3 Save 
 4 Quit
 
+ Items
+ Potions can be bought in the shop and used during attle to heal the player
+ Swords can be bought in the shop and increse the players ATK
+ Sheilds can be bought in the shop and increse the players DEF
+ Gold is the currency used and is obtained by defeating enemys
