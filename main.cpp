@@ -9,9 +9,21 @@
 #include "Area.h"
 using namespace std;
 
+/*Checklist of shit left to do.
+fix health scale -paul
+fix special attack -paul DONE
+fix stats loading from save issue -paul DONE
+fix load save when no save exists issue - paul DONE
+make boss summon function - callum
+write document for game path to be presented.
 
+after everything here is done do thorourgh check
+to remove any unnecessary code/files and ensure 
+game loop is fully functional
 
+*/
 
+int a=1;
 
 
 
@@ -33,9 +45,10 @@ bool battle(Player &player) {
 
     
 
-    while (player.hp > 0 && m.hp > 0) {
+    while (player.current_health > 0 && m.hp > 0) 
+    {
         m.Display_Monster();
-        cout << "\nYour HP: " << player.hp << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
+        cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << m.name << " HP: " << m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";
 
@@ -50,7 +63,7 @@ bool battle(Player &player) {
 
 
         if (choice == 1) {
-            int dmg = rand() % player.attack + 1;
+            int dmg = rand() % player.current_attack + 1;
             cout << "You deal " << dmg << " damage.\n";
             m.hp -= dmg;
         }
@@ -69,13 +82,14 @@ bool battle(Player &player) {
         if (m.hp > 0) {
             int dmg = rand() % m.attack + 1;
             cout << m.name << " hits you for " << dmg << "!\n";
-            player.hp -= dmg;
+            player.current_health -= dmg;
         }
     
        
     }
 
-    if (player.hp <= 0) {
+    if (player.current_health <= 0) 
+    {
         cout << "\n You were defeated...\n";
         return false;
     }
@@ -95,10 +109,10 @@ bool battle(Player &player) {
 
 void showMap() {
     cout << "\n--- MAP ---\n";
-    cout << "1. Forest (Monsters)\n";
+    cout << "1. Fight \n";
     cout << "2. Town (Shop)\n";
     cout << "3. Stats\n";
-    cout << "4. travel\n";
+   cout << "4. travel\n";
     cout << "5. Save Game\n";
     cout << "6. Quit Game\n";
 }
@@ -128,14 +142,13 @@ int main() {
     else if (choice == 2) {
         if (!loadGame(player)) {
             cout << "No save file found. Starting new game.\n";
-            cout << "Enter your name: ";
-            cin >> player.name;
+            player.Create();
         } else {
             cout << "Game loaded! Welcome back, " << player.name << ".\n";
         }
     }
     else {
-        cout << "Invalid choice — starting new game.\n";
+        cout << "Invalid choice â€” starting new game.\n";
         cout << "Enter your name: ";
         cin >> player.name;
     }
@@ -150,9 +163,15 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
-            if (!battle(player)) {
-                cout << "\nGAME OVER.\n";
-                break;
+            if(a>0){
+                a--;
+                if (!battle(player)) {
+                    cout << "\nGAME OVER.\n";
+                    break;
+                }
+            }
+            else{
+                cout << "You have already defeated the enemy here. Travel to a new location to find more enemies.\n";
             }
         }
         else if (choice == 2) {
@@ -175,8 +194,9 @@ int main() {
         }
         else if (choice ==4)
         {
-            Area area;
+           Area area;
             area.travel(player);
+            a++;
         }
         else {
             cout << "Invalid choice.\n";
@@ -186,4 +206,5 @@ int main() {
 
     return 0;
 }
+
 

@@ -263,33 +263,36 @@ void Player::starting_stats()
         base_attack =10;
         base_defence = 15;
         base_health = 40;
+        maxHP = 40;
     }
     else if (Class == 2) // mage
     {
         base_attack =20;
         base_defence =10;
         base_health = 30;
+        maxHP = 30;
     }
     else if (Class == 3) // archer
     {
-        base_attack =15;
+        base_attack = 15;
         base_defence = 10;
         base_health = 35;
+        maxHP = 35;
     }
 
     // compute current stats once
-    attack = base_attack + (level_reference * 1) + (sword_no * sword);
-    defence = base_defence + (level_reference * 1) + (shield_no * shield);
-    health = base_health + (level_reference * 5) + (potion_no * potion);
+    current_attack = base_attack;
+    current_defence = base_defence;
+    current_health = base_health;
 
 }
 void Player::stats_readback()
 {
   
 
-        std::cout << " Strength: " << attack << std::endl;
-        std::cout << " Defence: " << defence << std::endl;
-        std::cout << " Health: " << hp << std::endl;
+        std::cout << " Strength: " << current_attack << std::endl;
+        std::cout << " Defence: " << current_defence << std::endl;
+        std::cout << " Health: " << current_health << std::endl;
         std::cout << " Level: " << level << std::endl;
         std::cout << " Gold: " << gold << std::endl;
 

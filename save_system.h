@@ -16,11 +16,12 @@ bool saveGame(const Player &player)
     }
 
     file << player.name << "\n";
-    file << player.hp << "\n";
+    file << player.current_health << "\n";
     file << player.maxHP << "\n";
     file << player.stamina << "\n";
     file << player.maxStamina << "\n";
-    file << player.attack << "\n";
+    file << player.current_attack << "\n";
+    file << player.current_defence << "\n";
     file << player.level << "\n";
     file << player.exp << "\n";
     file << player.potion << "\n";
@@ -40,11 +41,12 @@ bool loadGame(Player &player)
     }
 
     file >> player.name;
-    file >> player.hp;
+    file >> player.current_health;
     file >> player.maxHP;
     file >> player.stamina;
     file >> player.maxStamina;
-    file >> player.attack;
+    file >> player.current_attack;
+    file >> player.current_defence;
     file >> player.level;
     file >> player.exp;
     file >> player.potion;
