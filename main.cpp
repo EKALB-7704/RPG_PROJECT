@@ -6,6 +6,7 @@
 #include "Monster.h"
 #include "save_system.h"
 #include "Store.h"
+#include "Area.h"
 using namespace std;
 
 
@@ -97,8 +98,9 @@ void showMap() {
     cout << "1. Forest (Monsters)\n";
     cout << "2. Town (Shop)\n";
     cout << "3. Stats\n";
-    cout << "4. Save Game\n";
-    cout << "5. Quit Game\n";
+    cout << "4. travel\n";
+    cout << "5. Save Game\n";
+    cout << "6. Quit Game\n";
 }
 
 
@@ -109,6 +111,7 @@ void showMap() {
 int main() {
   srand(time(0));
     store store;
+    Area area;
 
     Player player("temp");  // temporary until load or new game
 
@@ -159,20 +162,26 @@ int main() {
         {
             player.stats_readback();
         }
-        else if (choice == 4) 
+        else if (choice == 5) 
         {
             if (saveGame(player))
                 cout << "Game saved!\n";
             else
                 cout << "Error: Could not save.\n";
         }
-        else if (choice == 5) {
+        else if (choice == 6) {
         cout << "Thanks for playing!\n";
         break;
+        }
+        else if (choice ==4)
+        {
+            Area area;
+            area.travel(player);
         }
         else {
             cout << "Invalid choice.\n";
         }
+
     }
 
     return 0;

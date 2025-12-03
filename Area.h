@@ -8,14 +8,13 @@ class Area
 {
 
     private:
-    
+    int destination;
     
 
     public:
     //void starting_location(Character& race);
     bool travel(Player &player);
     void current_area();
-    int destination;
     std::string location ;  //will be changed to be a different starting location based on Race
 
 
