@@ -11,7 +11,7 @@ using namespace std;
 
 
 
-
+int a=1;
 
 
 
@@ -98,7 +98,7 @@ void showMap() {
     cout << "1. Fight \n";
     cout << "2. Town (Shop)\n";
     cout << "3. Stats\n";
-    cout << "4. travel\n";
+   cout << "4. travel\n";
     cout << "5. Save Game\n";
     cout << "6. Quit Game\n";
 }
@@ -150,9 +150,15 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
-            if (!battle(player)) {
-                cout << "\nGAME OVER.\n";
-                break;
+            if(a>0){
+                a--;
+                if (!battle(player)) {
+                    cout << "\nGAME OVER.\n";
+                    break;
+                }
+            }
+            else{
+                cout << "You have already defeated the enemy here. Travel to a new location to find more enemies.\n";
             }
         }
         else if (choice == 2) {
@@ -177,6 +183,7 @@ int main() {
         {
            Area area;
             area.travel(player);
+            a++;
         }
         else {
             cout << "Invalid choice.\n";
