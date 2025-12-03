@@ -8,8 +8,6 @@ Player::Player(string n) {
     name = n;
     maxHP = base_health;
     current_health = maxHP;
-    attack = current_attack;
-    defence = current_defence;
     level = 1;
     level_reference = level-1;
     exp = 0;

@@ -16,11 +16,12 @@ if (choice == 1)
 }
 else if (choice == 2)
 {
-    buy_sword(player.gold, player.sword_no);
+    buy_shield(player.gold, player.current_defence);
 }
 else if (choice == 3)
 {
-    buy_shield(player.gold, player.shield_no);
+    
+    buy_sword(player.gold, player.current_attack);
 }
 else
 {   
@@ -32,9 +33,9 @@ void store::store_menu()
 {
 std::cout << "==========================================================================================================\n";
 std::cout << "          <Shop> Welcome to the store! What would you like to buy? \n";
-std::cout << " (1) Potion                                 " << potion_price << " gold                              Heals 20HP\n";
-std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                               +20 DEF\n";
-std::cout << " (3) Sword Upgrade                          " << sword_price << " gold                                +20 ATK\n";
+std::cout << " (1) Potion                                 " << potion_price << " gold                              Heals 12HP\n";
+std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                               +5 DEF\n";
+std::cout << " (3) Sword Upgrade                          " << sword_price << " gold                                +5 ATK\n";
 std::cout << "==========================================================================================================\n";
 
 std::cout << "==========================================================================================================\n";
@@ -68,8 +69,8 @@ void store::buy_sword(int &gold, int &current_strength)
     if (gold >= sword_price)
     {
         gold -= sword_price;
-        current_strength += 10; // Increase strength by 10
-        std::cout << "You bought a sword! Strength increased by 10.\n";
+        current_strength += 5; // Increase strength by 10
+        std::cout << "You bought a sword! attack increased by 5.\n";
     }
     else
     {
@@ -82,8 +83,8 @@ void store::buy_shield(int &gold, int &current_defense)
     if (gold >= shield_price)
     {
         gold -= shield_price;
-        current_defense += 15; // Increase defense by 15
-        std::cout << "You bought a shield! Defense increased by 15.\n";
+        current_defense += 5; // Increase defense by 15
+        std::cout << "You bought a shield! Defense increased by 5.\n";
     }
     else
     {
