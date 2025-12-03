@@ -9,23 +9,7 @@
 #include "Area.h"
 using namespace std;
 
-/*Checklist of shit left to do.
-idiot-proof character create menu DONE
-fix health scale -paul DONE
-fix special attack -paul DONE
-fix stats loading from save issue -paul DONE
-fix load save when no save exists issue - paul DONE
-fix max health display -paul DONE
-add new enemies -anyone
-adjust odds for enemies to spawn -anyone
-make boss summon function - callum DONES
-write document for game path to be presented.
 
-after everything here is done do thorourgh check
-to remove any unnecessary code/files and ensure 
-game loop is fully functional
-
-*/
 
 int a=1;// integer used for empty area flag
 bool in_battle;
