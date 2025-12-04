@@ -12,7 +12,7 @@ display_gold(player.gold);
 store_menu();
 std::cin >> choice;
 if (choice == 1)
-{    buy_potion(player.gold, player.potion_no);
+{    buy_potion(player.gold, player.potion);
 }
 else if (choice == 2)
 {
@@ -38,8 +38,8 @@ void store::store_menu()
 std::cout << "==========================================================================================================\n";
 std::cout << "          <Shop> Welcome to the store! What would you like to buy? \n";
 std::cout << " (1) Potion                                 " << potion_price << " gold                              Heals 12HP\n";
-std::cout << " (2) Shield Upgrade                         " << shield_price << " gold                               +5 DEF\n";
-std::cout << " (3) Sword Upgrade                          " << sword_price << " gold                                +5 ATK\n";
+std::cout << " (2) Defense Upgrade                         " << shield_price << " gold                               +5 DEF\n";
+std::cout << " (3) Attack Upgrade                          " << sword_price << " gold                                +5 ATK\n";
 std::cout << " (4) Exit Store                                                            \n";
 std::cout << "==========================================================================================================\n";
 
@@ -95,10 +95,5 @@ void store::buy_shield(int &gold, int &current_defense)
     {
         std::cout << "Not enough gold to buy a shield; maybe a potion would suit you better.\n";
     }
-}
-
-void store::dialogue_cycle()
-{
-    
 }
 

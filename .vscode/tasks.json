@@ -13,6 +13,7 @@
                 "${workspaceFolder}\\Store.cpp",
                 "${workspaceFolder}\\Area.cpp",
                 "${workspaceFolder}\\Character_create.cpp",
+                "${workspaceFolder}\\Art.cpp",
                 "-o",
                 "${workspaceFolder}\\RPG_GAME.exe"
             ],

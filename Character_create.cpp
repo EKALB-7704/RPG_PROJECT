@@ -132,12 +132,16 @@ void Player::Race()
             
             if (race == 1) {
                 cout << "You have chosen Goblin. " << endl;
+                p_race = "Goblin";
             } else if (race == 2) { 
                 cout << "You have chosen Elf. " << endl;
+                p_race = "Elf";
             } else if (race == 3) { 
                 cout << "You have chosen Dwarf. " << endl; 
+                p_race = "Dwarf";
             } else if (race == 4) { 
                 cout << "You have chosen Human. " << endl;
+                p_race = "Human";
             }
 
             cout << "Is that correct? (Y/N)" << endl;        
@@ -250,8 +254,8 @@ void Player::Create()
 
 void Player::Character_Readback()
 {
-    std::cout << "Character Created! \n";
-    std::cout << "you are a " << age << " year old " << gender << " " << race << " named " << name << endl; 
+    
+    std::cout << "you are a " << age << " year old " << p_race <<" "<< p_class << " named " << name << endl; 
 }
 //This is as far as I got for the character creator
 
@@ -260,6 +264,7 @@ void Player::starting_stats()
     // assume member 'Class' is an int where 1=warrior, 2=mage, 3=archer
     if (Class == 1) // warrior
     {
+        p_class = "Warrior";
         base_attack =7;
         base_defence = 15;
         base_health = 40;
@@ -267,6 +272,7 @@ void Player::starting_stats()
     }
     else if (Class == 2) // mage
     {
+        p_class = "Mage";
         base_attack = 12;
         base_defence = 8;
         base_health = 30;
@@ -274,6 +280,7 @@ void Player::starting_stats()
     }
     else if (Class == 3) // archer
     {
+        p_class = "Archer";
         base_attack = 10;
         base_defence = 12;
         base_health = 25;
@@ -295,6 +302,7 @@ void Player::stats_readback()
         std::cout << " Health: " << current_health << std::endl;
         std::cout << " Level: " << level << std::endl;
         std::cout << " Gold: " << gold << std::endl;
+
 
 }
 

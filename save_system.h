@@ -52,6 +52,7 @@ bool loadGame(Player &player)
     file >> player.potion;
     file >> player.gold;
 
+
     file.close();
     return true;
 }

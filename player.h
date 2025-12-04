@@ -32,15 +32,15 @@ class Player
     int gold;
     int maxStamina;
     int stamina;
+    string p_class;
+    int a=1;// integer used for empty area flag
     
     int current_attack, current_defence, current_health;
     int health,attack,defence;
     int base_health,base_attack,base_defence;
 
-    int shield,sword,potion = 20;
-    int shield_no = 0; 
-    int sword_no = 0;
-    int potion_no = 0;
+    
+    int potion;
 
 
 
@@ -71,6 +71,7 @@ class Player
     string gender;
     string Create_choice;
     int race;
+    string p_race;
 
   
     char confirmation;

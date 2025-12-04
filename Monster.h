@@ -18,8 +18,7 @@ public:
     Monster(string n, int h, int a, int xp, int g);
 
     void Display_Monster();
-    void moveCursorUp(int n);
-    void clearLine();
+
 
 
 

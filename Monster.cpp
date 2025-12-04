@@ -24,7 +24,7 @@ Monster::Monster(string n, int h, int a, int xp, int g) {
 
 Monster returnOpponent(int &level)
 {
-    if (level >= 4)
+    if (level >= 3)
     {
         return getBoss();
     }
