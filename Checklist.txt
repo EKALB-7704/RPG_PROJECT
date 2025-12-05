@@ -6,7 +6,7 @@ Add an idea if you think of something and number it.
 List is in no particular order and no task has inherent priority over another,
 BUT if you feel a specific task is important to be finished quickly you can mark it with [IMPORTANT].
 
-If you undertake a task, mark your name beside the corrosponding entry to prevent duplicate development.
+If you undertake a task, mark your [NAME] beside the corrosponding entry to prevent duplicate development.
 Test code to the best of your ability, and ensure project builds and runs before commiting.
 
 IF and only IF, your code does not compile due to an issue with vscode (which is likely) 
@@ -31,7 +31,7 @@ When a task is done/in progress mark it with [DONE]/[IN PROGRESS], Display Gold 
 
 6.  Unique art for enemies
 
-7.  Coloured text (Very important)
+7.  Coloured text (Very important)  [Paul]
 
 8.  Display Gold function [DONE]
 
@@ -45,3 +45,5 @@ When a task is done/in progress mark it with [DONE]/[IN PROGRESS], Display Gold 
 12. Folder layout overhaul 
 
 13. Multiple save files (save 1, save 2, save 3 etc)
+
+14. replace extended if/elseif statements witch switch statements

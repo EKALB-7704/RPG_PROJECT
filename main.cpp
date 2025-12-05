@@ -8,6 +8,7 @@
 #include "Store.h"
 #include "Area.h"
 #include "Art.h"
+#include "Colours.h"
 using namespace std;
 
 
@@ -26,7 +27,8 @@ void showMap();
        COMBAT
    ===================== */
 
-bool battle(Player &player) {
+bool battle(Player &player) 
+{
     //Pull random monster to fight and display it
     
     Monster enemy_m = returnOpponent(player.level);
@@ -43,6 +45,7 @@ bool battle(Player &player) {
     //and monster are alive (health > 0)
     while (player.current_health > 0 && enemy_m.hp > 0) 
     {
+        
         //Display monster and player current stats(Health,stamina etc.)
         cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
         cout << enemy_m.name << " HP: " << enemy_m.hp << "\n";
@@ -55,8 +58,22 @@ bool battle(Player &player) {
         cout << "3. Special Attack\n";
         cout << "> ";
 
+        
+
         int choice;
         cin >> choice;
+
+        if (choice < 1  || choice > 3)
+        {
+
+            cout << "Invalid choice! you stumble!\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+            
+            
+
+        }
 
 
         if (choice == 1) // 1 = attack
@@ -82,12 +99,6 @@ bool battle(Player &player) {
             enemy_m.hp -= dmg;
         }
         
-        else 
-        {
-            //If user input is not one of the assigned options output the following
-            enemy_m.Display_Monster();
-            cout << "Invalid choice! you stumble!\n";
-        }
 
         //Monster damage dealt to player calc
         if (enemy_m.hp > 0) {
@@ -202,6 +213,12 @@ int main() // set main loop
         {
             player.stats_readback();
         }
+        else if (choice ==4)
+        {
+            
+            area.travel(player);
+            player.a++;
+        }
         else if (choice == 5) 
         {
             if (saveGame(player))
@@ -213,14 +230,13 @@ int main() // set main loop
         cout << "Thanks for playing!\n";
         break;
         }
-        else if (choice ==4)
+     
+        else if (choice < 1 || choice > 6)
         {
-           Area area;
-            area.travel(player);
-            player.a++;
-        }
-        else {
             cout << "Invalid choice.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
         }
 
     }
