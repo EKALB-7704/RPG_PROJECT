@@ -12,6 +12,9 @@ class Art
     public:
 
     void Main_menu_skull();
+    void Display_skeleton();
+
+    void Enemy_name_reader(string &name);
 
     
 };

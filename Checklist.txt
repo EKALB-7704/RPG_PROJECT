@@ -1,0 +1,33 @@
+This text file is for writing new features to add, ideas to be developed, and general improvents to the game.
+Add an idea if you feel like it. 
+If you undertake a task, mark your name beside the corrosponding entry to prevent duplicate development.
+Test code to the best of your ability, and ensure project builds before commiting.
+When a task is done/in progress mark it with [DONE]/[IN PROGRESS].
+ 
+
+
+1.  Fully implement race aspects of character creator ie. starting location, stat bonuses.
+
+2.  Addtional stats such as dexterity(chance to dodge), 
+    charsima(better deals in shop), luck(chance to find more gold/items) etc
+
+3.  Status effects such as poison, bleed, bound(reduce dodge chance) and there corrosponding cures/remedies
+
+4.  Improve variance in classes (mages get higher damage but have to manage mana
+    and archers get higher dodge chance due to being far away but also have chance to miss attack)
+
+5.  More enemies and by extension area specific enemies
+    (undead enemies in dungeon, animals in forest, knights in castle etc) 
+
+6.  Unique art for enemies
+
+7.  Colour (Very important)
+
+8.  Display Gold function [DONE]
+
+9.  Improved UI 
+
+10.  More items such as ironskin potion (+defense), Battle potion(+damage), 
+    Lucky horseshoe(pretty self explanatory) etc
+
+11. Quests 

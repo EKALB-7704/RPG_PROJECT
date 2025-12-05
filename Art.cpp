@@ -1,5 +1,5 @@
 #include "Art.h"
-
+#include "Monster.h"
 void Art::Main_menu_skull()
 {
      cout << "                    +##*####****######*####                    " << endl;
@@ -39,4 +39,18 @@ void Art::Main_menu_skull()
     cout << "                   ***##*--::::::--::::-=++###**                 " << endl;
     cout << "                      ##**#*=----------+##**#*                    " << endl;
     cout << "                           *##########*                         " << endl;
+}
+
+void Art::Display_skeleton()
+{
+    cout << "This is a test to display when this particular enemy is spawned";
+}
+
+void Art::Enemy_name_reader(string &name)
+{
+    if (name == "Skeleton Soldier")
+    {
+        Display_skeleton();
+    }
+    
 }

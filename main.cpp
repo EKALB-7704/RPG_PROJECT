@@ -28,25 +28,27 @@ void showMap();
 
 bool battle(Player &player) {
     //Pull random monster to fight and display it
-
-    Monster m = returnOpponent(player.level);
-    m.Display_Monster();
+    
+    Monster enemy_m = returnOpponent(player.level);
+    enemy_m.Display_Monster();
+    
+    
     
 
 
-    cout << "\n A wild " << m.name << " appears!\n";
+    cout << "\n A wild " << enemy_m.name << " appears!\n";
 
     
     //Keep combat loop running while both player 
     //and monster are alive (health > 0)
-    while (player.current_health > 0 && m.hp > 0) 
+    while (player.current_health > 0 && enemy_m.hp > 0) 
     {
         //Display monster and player current stats(Health,stamina etc.)
         cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
-        cout << m.name << " HP: " << m.hp << "\n";
+        cout << enemy_m.name << " HP: " << enemy_m.hp << "\n";
         cout << "Potions: " << player.potion << "\n";
 
-        //Display action options and take in usier input
+        //Display action options and take in user input
         cout << "\nChoose action:\n";
         cout << "1. Attack\n";
         cout << "2. Heal\n";
@@ -62,35 +64,35 @@ bool battle(Player &player) {
            
             //Do calc for damage dealt to monster
             int dmg = rand() % player.current_attack + 1;
-            m.Display_Monster();
+            enemy_m.Display_Monster();
             cout << "You deal " << dmg << " damage.\n";
-            m.hp -= dmg;
+            enemy_m.hp -= dmg;
         }
         else if (choice == 2) // 2 = consume potion to heal
         {
             //Run heal function 
-            m.Display_Monster();
+            enemy_m.Display_Monster();
             player.heal();
         }
         else if (choice == 3) // 3 = special attack
         {
             //Run special attack function
-            m.Display_Monster();
+            enemy_m.Display_Monster();
             int dmg = player.specialAttack();
-            m.hp -= dmg;
+            enemy_m.hp -= dmg;
         }
         
         else 
         {
             //If user input is not one of the assigned options output the following
-            m.Display_Monster();
+            enemy_m.Display_Monster();
             cout << "Invalid choice! you stumble!\n";
         }
 
         //Monster damage dealt to player calc
-        if (m.hp > 0) {
-            int dmg = rand() % m.attack + 1;
-            cout << m.name << " hits you for " << dmg << "!\n";
+        if (enemy_m.hp > 0) {
+            int dmg = rand() % enemy_m.attack + 1;
+            cout << enemy_m.name << " hits you for " << dmg << "!\n";
             int true_dmg = (dmg - (player.current_defence / 6));
             if (true_dmg < 0)
             {
@@ -109,11 +111,11 @@ bool battle(Player &player) {
         return false;
     }
     //Victory message and reward calc for defeating a mosnter
-    cout << "\n You defeated the " << m.name << "!\n";
-    player.gainExp(m.rewardExp);
-    player.gold += m.rewardGold;
+    cout << "\n You defeated the " << enemy_m.name << "!\n";
+    player.gainExp(enemy_m.rewardExp);
+    player.gold += enemy_m.rewardGold;
     player.kill_count++;
-    cout << "You found " << m.rewardGold << " gold!\n";
+    cout << "You found " << enemy_m.rewardGold << " gold!\n";
 
     return true;
 }
@@ -145,12 +147,12 @@ int main() // set main loop
     srand(time(0));
     store store; 
     Area area;
-    Art art;
+    Art main_art;
 
     Player player("temp");  // temporary until load or new game
 
      
-    art.Main_menu_skull();
+    main_art.Main_menu_skull();
     cout << "WELCOME TO SKELETON QUEST!\n";
     cout << "1. New Game\n";
     cout << "2. Load Game\n";

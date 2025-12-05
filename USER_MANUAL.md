@@ -1,6 +1,6 @@
 */ This is the user manual for out RPG game project
 
-The aim of the game is to battle enemys, level up and deafeat the skeleton king
+The aim of the game is to battle enemys, level up and defeat the skeleton king
 
 Press 1 for new game
 Press 2 to load game
@@ -34,7 +34,7 @@ Displays rewards
  Sheilds can be bought in the shop and increse the players DEF
  Gold is the currency used and is obtained by defeating enemys
 
- Leveling up increses you health ATK and DEF it also fully heals your character
+ Leveling up increses you health ATK and DEF it also fully heals your character and refills your stamina charges
 
- For demonstration purposes we have the game scaled down, you encounter the skeleton king after you reach level 6 and once you beat him you will win the game 
+ For demonstration purposes we have the game scaled down, you encounter the skeleton king after you reach level 3 and once you beat him you will win the game 
  

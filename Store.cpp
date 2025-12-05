@@ -65,7 +65,7 @@ void store::buy_potion(int &gold, int &potions)
     }
     else
     {
-        std::cout << "Not enough gold to buy a potion so get out of my store.\n";
+        std::cout << "Not enough gold to buy a potion.\n";
     }
 }
 
@@ -74,12 +74,12 @@ void store::buy_sword(int &gold, int &current_strength)
     if (gold >= sword_price)
     {
         gold -= sword_price;
-        current_strength += 5; // Increase strength by 10
+        current_strength += 5; // Increase strength by 5
         std::cout << "You bought a sword! attack increased by 5.\n";
     }
     else
     {
-        std::cout << "Not enough gold to buy a sword; could I interest you in a potion or shield instead?\n";
+        std::cout << "Not enough gold to buy a sword.\n";
     }
 }
 
@@ -88,12 +88,12 @@ void store::buy_shield(int &gold, int &current_defense)
     if (gold >= shield_price)
     {
         gold -= shield_price;
-        current_defense += 5; // Increase defense by 15
+        current_defense += 5; // Increase defense by 5
         std::cout << "You bought a shield! Defense increased by 5.\n";
     }
     else
     {
-        std::cout << "Not enough gold to buy a shield; maybe a potion would suit you better.\n";
+        std::cout << "Not enough gold to buy a shield.\n";
     }
 }
 
