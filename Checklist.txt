@@ -1,11 +1,21 @@
 This text file is for writing new features to add, ideas to be developed, and general improvents to the game.
-Add an idea if you feel like it. 
+
+
+Add an idea if you think of something and number it.
+
+List is in no particular order and no task has inherent priority over another,
+BUT if you feel a specific task is important to be finished quickly you can mark it with [IMPORTANT].
+
 If you undertake a task, mark your name beside the corrosponding entry to prevent duplicate development.
-Test code to the best of your ability, and ensure project builds before commiting.
-When a task is done/in progress mark it with [DONE]/[IN PROGRESS].
+Test code to the best of your ability, and ensure project builds and runs before commiting.
+
+IF and only IF, your code does not compile due to an issue with vscode (which is likely) 
+rather than the code itself, then just state that in your commit message so everyone is aware.
+
+When a task is done/in progress mark it with [DONE]/[IN PROGRESS], Display Gold task is included as an example.
  
 
-
+[TASKS]
 1.  Fully implement race aspects of character creator ie. starting location, stat bonuses.
 
 2.  Addtional stats such as dexterity(chance to dodge), 
@@ -21,7 +31,7 @@ When a task is done/in progress mark it with [DONE]/[IN PROGRESS].
 
 6.  Unique art for enemies
 
-7.  Colour (Very important)
+7.  Coloured text (Very important)
 
 8.  Display Gold function [DONE]
 
@@ -30,4 +40,8 @@ When a task is done/in progress mark it with [DONE]/[IN PROGRESS].
 10.  More items such as ironskin potion (+defense), Battle potion(+damage), 
     Lucky horseshoe(pretty self explanatory) etc
 
-11. Quests 
+11. Quests/Story
+
+12. Folder layout overhaul 
+
+13. Multiple save files (save 1, save 2, save 3 etc)

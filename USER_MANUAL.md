@@ -1,40 +1,62 @@
-*/ This is the user manual for out RPG game project
+This is the user manual for out RPG game project
 
-The aim of the game is to battle enemys, level up and defeat the skeleton king
+The aim of the game is to battle enemies, level up and defeat the skeleton king
+
+
+SAVE/LOAD ON GAME START
 
 Press 1 for new game
 Press 2 to load game
 
-New game
-Accept the quest to defeat the Skeleton King
+New game:
+
 Enter your name 
 Enter age
 Pick race1,2,3   
 Pick class 1,2,3 (Starting stats)
-Area
-1 Go to shop
-2 Fight
+Accept the quest to defeat the Skeleton King
 
-Encounter 
+
+World Map
+1 Fight
+2 Town(shop)
+3 Stats
+4 Travel
+5 Save 
+6 Exit
+
+FIGHT: 
 1 Attack 
 2 Heal 
 3 Special attack
 After you succsessfully defeat and enemy you will gain XP to level your charater and gold depending on the enemy defeated
 
-After encounter
-Displays rewards
-1 fight monster
-2 go to shop
-3 Save 
-4 Quit
 
- Items
- Potions can be bought in the shop and used during attle to heal the player
- Swords can be bought in the shop and increse the players ATK
- Sheilds can be bought in the shop and increse the players DEF
- Gold is the currency used and is obtained by defeating enemys
+TOWN(SHOP):
+Gold is the currency used and is obtained by defeating enemys
+Potions can be bought in the shop and used during attle to heal the player
+Attack Upgrades can be bought in the shop and increse the players ATK
+Defence upgrades can be bought in the shop and increse the players DEF
 
- Leveling up increses you health ATK and DEF it also fully heals your character and refills your stamina charges
+STATS:
+Displays current/max health, attack, defence, level and gold
+Leveling up increses your health(+10), ATK(+2), DEF(+2) and Stamina charges. It also fully heals your character and refills your stamina charges.
 
- For demonstration purposes we have the game scaled down, you encounter the skeleton king after you reach level 3 and once you beat him you will win the game 
+TRAVEL:
+Travel to the different areas to fight foes and level up.
+
+SAVE:
+Saves the players stats to a text file to be loaded from the main menu.
+
+EXIT:
+closes the game.
+
+
+ Fighting the boss and "beating" the game:
+
+ For demonstration purposes,we have set it so you encounter the skeleton king after you reach level 3. If you beat him you will win the game, if you die you lose and the game closes.
+
+ In an actual playthrough we intend for the boss to be fought at level 5. If you wish to fight him as intended just change the level check threshold in the returnOpponent() function in Monster.cpp to 5
+
+ enjoy the game!
  

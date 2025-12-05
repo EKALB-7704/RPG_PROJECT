@@ -5,12 +5,14 @@
 using namespace std;
 
 
-
+//Function for displaying current location, useful if you get lost.
 void Area::current_area()
 {
     cout << "you are currently in " << "[" << location << "]" << endl; 
 
 }
+
+//Function for travelling from area to area
 void Area::travel(Player &player)
 {
     cout << "Where would you like to go?" << endl;
