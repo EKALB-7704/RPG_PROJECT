@@ -116,6 +116,235 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named skeleton_quest
+
+# Build rule for target.
+skeleton_quest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 skeleton_quest
+.PHONY : skeleton_quest
+
+# fast build rule for target.
+skeleton_quest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/build
+.PHONY : skeleton_quest/fast
+
+src/Area.o: src/Area.cpp.o
+.PHONY : src/Area.o
+
+# target to build an object file
+src/Area.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Area.cpp.o
+.PHONY : src/Area.cpp.o
+
+src/Area.i: src/Area.cpp.i
+.PHONY : src/Area.i
+
+# target to preprocess a source file
+src/Area.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Area.cpp.i
+.PHONY : src/Area.cpp.i
+
+src/Area.s: src/Area.cpp.s
+.PHONY : src/Area.s
+
+# target to generate assembly for a file
+src/Area.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Area.cpp.s
+.PHONY : src/Area.cpp.s
+
+src/Art.o: src/Art.cpp.o
+.PHONY : src/Art.o
+
+# target to build an object file
+src/Art.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Art.cpp.o
+.PHONY : src/Art.cpp.o
+
+src/Art.i: src/Art.cpp.i
+.PHONY : src/Art.i
+
+# target to preprocess a source file
+src/Art.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Art.cpp.i
+.PHONY : src/Art.cpp.i
+
+src/Art.s: src/Art.cpp.s
+.PHONY : src/Art.s
+
+# target to generate assembly for a file
+src/Art.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Art.cpp.s
+.PHONY : src/Art.cpp.s
+
+src/CharacterCreate.o: src/CharacterCreate.cpp.o
+.PHONY : src/CharacterCreate.o
+
+# target to build an object file
+src/CharacterCreate.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/CharacterCreate.cpp.o
+.PHONY : src/CharacterCreate.cpp.o
+
+src/CharacterCreate.i: src/CharacterCreate.cpp.i
+.PHONY : src/CharacterCreate.i
+
+# target to preprocess a source file
+src/CharacterCreate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/CharacterCreate.cpp.i
+.PHONY : src/CharacterCreate.cpp.i
+
+src/CharacterCreate.s: src/CharacterCreate.cpp.s
+.PHONY : src/CharacterCreate.s
+
+# target to generate assembly for a file
+src/CharacterCreate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/CharacterCreate.cpp.s
+.PHONY : src/CharacterCreate.cpp.s
+
+src/Input.o: src/Input.cpp.o
+.PHONY : src/Input.o
+
+# target to build an object file
+src/Input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Input.cpp.o
+.PHONY : src/Input.cpp.o
+
+src/Input.i: src/Input.cpp.i
+.PHONY : src/Input.i
+
+# target to preprocess a source file
+src/Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Input.cpp.i
+.PHONY : src/Input.cpp.i
+
+src/Input.s: src/Input.cpp.s
+.PHONY : src/Input.s
+
+# target to generate assembly for a file
+src/Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Input.cpp.s
+.PHONY : src/Input.cpp.s
+
+src/Monster.o: src/Monster.cpp.o
+.PHONY : src/Monster.o
+
+# target to build an object file
+src/Monster.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Monster.cpp.o
+.PHONY : src/Monster.cpp.o
+
+src/Monster.i: src/Monster.cpp.i
+.PHONY : src/Monster.i
+
+# target to preprocess a source file
+src/Monster.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Monster.cpp.i
+.PHONY : src/Monster.cpp.i
+
+src/Monster.s: src/Monster.cpp.s
+.PHONY : src/Monster.s
+
+# target to generate assembly for a file
+src/Monster.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Monster.cpp.s
+.PHONY : src/Monster.cpp.s
+
+src/Player.o: src/Player.cpp.o
+.PHONY : src/Player.o
+
+# target to build an object file
+src/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Player.cpp.o
+.PHONY : src/Player.cpp.o
+
+src/Player.i: src/Player.cpp.i
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
+
+src/Player.s: src/Player.cpp.s
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
+src/SaveSystem.o: src/SaveSystem.cpp.o
+.PHONY : src/SaveSystem.o
+
+# target to build an object file
+src/SaveSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/SaveSystem.cpp.o
+.PHONY : src/SaveSystem.cpp.o
+
+src/SaveSystem.i: src/SaveSystem.cpp.i
+.PHONY : src/SaveSystem.i
+
+# target to preprocess a source file
+src/SaveSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/SaveSystem.cpp.i
+.PHONY : src/SaveSystem.cpp.i
+
+src/SaveSystem.s: src/SaveSystem.cpp.s
+.PHONY : src/SaveSystem.s
+
+# target to generate assembly for a file
+src/SaveSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/SaveSystem.cpp.s
+.PHONY : src/SaveSystem.cpp.s
+
+src/Store.o: src/Store.cpp.o
+.PHONY : src/Store.o
+
+# target to build an object file
+src/Store.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Store.cpp.o
+.PHONY : src/Store.cpp.o
+
+src/Store.i: src/Store.cpp.i
+.PHONY : src/Store.i
+
+# target to preprocess a source file
+src/Store.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Store.cpp.i
+.PHONY : src/Store.cpp.i
+
+src/Store.s: src/Store.cpp.s
+.PHONY : src/Store.s
+
+# target to generate assembly for a file
+src/Store.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/Store.cpp.s
+.PHONY : src/Store.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skeleton_quest.dir/build.make CMakeFiles/skeleton_quest.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +353,34 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... skeleton_quest"
+	@echo "... src/Area.o"
+	@echo "... src/Area.i"
+	@echo "... src/Area.s"
+	@echo "... src/Art.o"
+	@echo "... src/Art.i"
+	@echo "... src/Art.s"
+	@echo "... src/CharacterCreate.o"
+	@echo "... src/CharacterCreate.i"
+	@echo "... src/CharacterCreate.s"
+	@echo "... src/Input.o"
+	@echo "... src/Input.i"
+	@echo "... src/Input.s"
+	@echo "... src/Monster.o"
+	@echo "... src/Monster.i"
+	@echo "... src/Monster.s"
+	@echo "... src/Player.o"
+	@echo "... src/Player.i"
+	@echo "... src/Player.s"
+	@echo "... src/SaveSystem.o"
+	@echo "... src/SaveSystem.i"
+	@echo "... src/SaveSystem.s"
+	@echo "... src/Store.o"
+	@echo "... src/Store.i"
+	@echo "... src/Store.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/main.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/main.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/main.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/Player.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Player.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Player.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/Player.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/CharacterCreate.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/CharacterCreate.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/CharacterCreate.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/CharacterCreate.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/Monster.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Monster.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Monster.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/Monster.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/Store.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Store.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Store.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/Store.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/Area.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Area.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Area.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/Area.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/Art.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Art.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Art.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/Art.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/Input.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Input.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/Input.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/Input.cpp.o"
+},
+{
+  "directory": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build",
+  "command": "/usr/bin/c++   -std=c++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/skeleton_quest.dir/src/SaveSystem.cpp.o -c \"/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/SaveSystem.cpp\"",
+  "file": "/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/src/SaveSystem.cpp",
+  "output": "CMakeFiles/skeleton_quest.dir/src/SaveSystem.cpp.o"
+}
+]
