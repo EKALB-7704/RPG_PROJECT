@@ -1,3 +1,9 @@
+# Build output, editor settings and game saves
+build/
+.vscode/
+save*.txt
+skeleton_quest
+
 # Prerequisites
 *.d
 

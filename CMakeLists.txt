@@ -22,5 +22,5 @@ add_executable(skeleton_quest
 if(MSVC)
     target_compile_options(skeleton_quest PRIVATE /W4 /WX)
 else()
-    target_compile_options(skeleton_quest PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    target_compile_options(skeleton_quest PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Werror)
 endif()

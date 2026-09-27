@@ -1,3 +1,0 @@
-/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build/CMakeFiles/skeleton_quest.dir
-/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build/CMakeFiles/edit_cache.dir
-/home/paul_blake/C++ projects/RPG_GAME/RPG_PROJECT/build/CMakeFiles/rebuild_cache.dir
