@@ -111,7 +111,7 @@ BattleResult battle(Player &player)
     player.kill_count++;
     std::cout << "You found " << enemy_m.rewardGold << " gold!\n";
 
-    return enemy_m.isBoss ? BattleResult::BossDefeated : BattleResult::Victory;
+    return enemy_m.getIsBoss() ? BattleResult::BossDefeated : BattleResult::Victory;
 }
 
 

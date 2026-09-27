@@ -8,9 +8,12 @@ constexpr int kBossLevel = 5;
 
 class Monster {
 
+private:
+    bool isBoss = false;
+    
+
 public:
     std::string name;
-    bool isBoss = false;
     int hp;
     int attack;
     int rewardExp;
@@ -18,9 +21,9 @@ public:
 
     
 
-    
+    bool getIsBoss() const { return isBoss; }
 
-    Monster(std::string n, int h, int a, int xp, int g);
+    Monster(std::string n, int h, int a, int xp, int g, bool boss = false);
 
     void Display_Monster(const std::string &location) const;
 

@@ -12,12 +12,13 @@
 
 
 
-Monster::Monster(std::string n, int h, int a, int xp, int g) {
+Monster::Monster(std::string n, int h, int a, int xp, int g, bool boss) {
     name = n;
     hp = h;
     attack = a;
     rewardExp = xp;
     rewardGold = g;
+    isBoss = boss;
 }
 
 Monster returnOpponent(int &level)
@@ -34,9 +35,7 @@ Monster returnOpponent(int &level)
 
 Monster getBoss()
 {
-    Monster boss("Skeleton King", 200, 20, 100, 4000);
-    boss.isBoss = true;
-    return boss;
+    return Monster("Skeleton King", 200, 20, 100, 4000, true);
 }
 
 Monster getRandomMonster() {
