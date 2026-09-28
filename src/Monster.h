@@ -3,11 +3,17 @@
 #include <thread>
 #include <chrono>
 #include <string>
-using namespace std;
+
+constexpr int kBossLevel = 5;
 
 class Monster {
+
+private:
+    bool isBoss = false;
+    
+
 public:
-    string name;
+    std::string name;
     int hp;
     int attack;
     int rewardExp;
@@ -15,9 +21,11 @@ public:
 
     
 
-    Monster(string n, int h, int a, int xp, int g);
+    bool getIsBoss() const { return isBoss; }
 
-    void Display_Monster();
+    Monster(std::string n, int h, int a, int xp, int g, bool boss = false);
+
+    void Display_Monster(const std::string &location) const;
 
 
 
