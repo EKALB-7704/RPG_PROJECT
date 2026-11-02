@@ -33,7 +33,7 @@ public:
 
 };
 
-Monster returnOpponent(int &level);
+Monster returnOpponent(int level);
 
 Monster getBoss();
 

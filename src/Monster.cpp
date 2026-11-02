@@ -21,7 +21,7 @@ Monster::Monster(std::string n, int h, int a, int xp, int g, bool boss) {
     isBoss = boss;
 }
 
-Monster returnOpponent(int &level)
+Monster returnOpponent(int level)
 {
     if (level >= kBossLevel)
     {

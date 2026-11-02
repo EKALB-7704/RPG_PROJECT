@@ -3,116 +3,16 @@
 #include <cstdlib>
 #include <ctime>
 #include "Player.h"
-#include "Monster.h"
 #include "SaveSystem.h"
 #include "Store.h"
 #include "Area.h"
 #include "Art.h"
 #include "Input.h"
+#include "Battle.h"
 
 
-enum class BattleResult { Victory, Defeat, BossDefeated };
-
-
-
-
-//Declare battle and map functions
-BattleResult battle(Player &player);
-
+//Declare map function
 void showMap();
-
-
-/* =====================
-       COMBAT
-   ===================== */
-
-BattleResult battle(Player &player) 
-{
-
-    //Pull random monster to fight and display it
-    
-    Monster enemy_m = returnOpponent(player.level);
-    enemy_m.Display_Monster(player.location);
-    
-    
-    
-
-
-    std::cout << "\n A wild " << enemy_m.name << " appears!\n";
-
-    
-    //Keep combat loop running while both player 
-    //and monster are alive (health > 0)
-    while (player.current_health > 0 && enemy_m.hp > 0) 
-    {
-        
-        //Display monster and player current stats(Health,stamina etc.)
-        std::cout << "\nYour HP: " << player.current_health << "/" << player.maxHP << "\n" << "Your Stamina: "<< player.stamina << "/" << player.maxStamina << "\n";
-        std::cout << enemy_m.name << " HP: " << enemy_m.hp << "\n";
-        std::cout << "Potions: " << player.potion << "\n";
-
-        //Display action options and take in user input
-        std::cout << "\nChoose action:\n";
-        std::cout << "1. Attack\n";
-        std::cout << "2. Heal\n";
-        std::cout << "3. Special Attack\n";
-
-        int choice = readInt("> ", 1, 3);
-
-        if (choice == 1) // 1 = attack
-        {
-           
-            //Do calc for damage dealt to monster
-            int dmg = rand() % player.current_attack + 1;
-            enemy_m.Display_Monster(player.location);
-            std::cout << "You deal " << dmg << " damage.\n";
-            enemy_m.hp -= dmg;
-        }
-        else if (choice == 2) // 2 = consume potion to heal
-        {
-            //Run heal function 
-            enemy_m.Display_Monster(player.location);
-            player.heal();
-        }
-        else if (choice == 3) // 3 = special attack
-        {
-            //Run special attack function
-            enemy_m.Display_Monster(player.location);
-            int dmg = player.specialAttack();
-            enemy_m.hp -= dmg;
-        }
-        
-
-        //Monster damage dealt to player calc
-        if (enemy_m.hp > 0) {
-            int dmg = rand() % enemy_m.attack + 1;
-            std::cout << enemy_m.name << " hits you for " << dmg << "!\n";
-            int true_dmg = (dmg - (player.current_defence / 6));
-            if (true_dmg < 0)
-            {
-                true_dmg = 0;
-            }
-            player.current_health -= true_dmg ;
-        }
-    
-       
-    }
-
-    //conditon check to see if player is dead
-    if (player.current_health <= 0) 
-    {
-        std::cout << "\n You were defeated...\n";
-        return BattleResult::Defeat;
-    }
-    //Victory message and reward calc for defeating a mosnter
-    std::cout << "\n You defeated the " << enemy_m.name << "!\n";
-    player.gainExp(enemy_m.rewardExp);
-    player.gold += enemy_m.rewardGold;
-    player.kill_count++;
-    std::cout << "You found " << enemy_m.rewardGold << " gold!\n";
-
-    return enemy_m.getIsBoss() ? BattleResult::BossDefeated : BattleResult::Victory;
-}
 
 
 /* =====================
@@ -210,5 +110,3 @@ int main() // set main loop
         }
     }
 }
-
-
