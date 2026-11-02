@@ -38,7 +38,7 @@ void showMap() //map function
 int main() // set main loop
 {
 
-    srand(time(0));
+    srand(static_cast<unsigned>(time(0)));
     store store; 
     Area area;
     Art main_art;

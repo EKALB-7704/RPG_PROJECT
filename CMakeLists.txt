@@ -34,3 +34,9 @@ target_link_libraries(game_core PRIVATE project_warnings)
 # Thin wrapper: menu wiring only.
 add_executable(skeleton_quest src/main.cpp)
 target_link_libraries(skeleton_quest PRIVATE game_core project_warnings)
+
+enable_testing()
+add_executable(tests tests/test_player.cpp)
+target_link_libraries(tests PRIVATE game_core project_warnings)
+target_include_directories(tests SYSTEM PRIVATE third_party)
+add_test(NAME unit COMMAND tests)

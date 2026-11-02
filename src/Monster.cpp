@@ -50,7 +50,7 @@ Monster getRandomMonster() {
 
 void Monster::Display_Monster(const std::string &location) const
 {
-        constexpr std::size_t width = 106;  // width of the ==== banner
+        static constexpr std::size_t width = 106;  // width of the ==== banner
         auto centred = [](const std::string &text) {
             std::size_t pad = text.size() < width ? (width - text.size()) / 2 : 0;
             return std::string(pad, ' ') + text;
