@@ -16,8 +16,8 @@ pick the work up on a fresh machine is here.
 |---|---|
 | 2A.1 — library/executable split, combat moved out of `main.cpp` | **done** (`00b4327`) |
 | 2A.1b — fix clang `-Werror` build | **done** (`ecfda28`) |
-| 2A.2 — test harness + first tests | todo |
-| 2A.3 — `Rng` seam | todo |
+| 2A.2 — test harness + first tests | **done** (`2a9b010`) |
+| 2A.3 — `Rng` seam | **done** (uncommitted) |
 | 2A.4 — `Io` seam | todo |
 | 2A.5 — CI + sanitizers | todo |
 

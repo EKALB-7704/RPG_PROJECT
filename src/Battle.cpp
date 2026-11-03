@@ -1,13 +1,12 @@
 #include "Battle.h"
 #include "Input.h"
 #include "Monster.h"
-#include <cstdlib>
 #include <iostream>
 
-BattleResult battle(Player &player) {
+BattleResult battle(Player &player, Rng &rng) {
 
   // Pull a random monster from the pool to fight and display it
-  Monster new_enemy = returnOpponent(player.level);
+  Monster new_enemy = returnOpponent(player.level, rng);
   new_enemy.Display_Monster(player.location);
 
   std::cout << "\n A wild " << new_enemy.name << " appears!\n";
@@ -35,7 +34,7 @@ BattleResult battle(Player &player) {
     if (choice == 1) // 1 = attack
     {
       // Do calc for damage dealt to monster
-      int dmg = rand() % player.current_attack + 1;
+      int dmg = rng.range(1, player.current_attack);
       new_enemy.Display_Monster(player.location);
       std::cout << "You deal " << dmg << " damage.\n";
       new_enemy.hp -= dmg;
@@ -48,13 +47,13 @@ BattleResult battle(Player &player) {
     {
       // Run special attack function
       new_enemy.Display_Monster(player.location);
-      int dmg = player.specialAttack();
+      int dmg = player.specialAttack(rng);
       new_enemy.hp -= dmg;
     }
 
     // Monster damage dealt to player calc
     if (new_enemy.hp > 0) {
-      int dmg = rand() % new_enemy.attack + 1;
+      int dmg = rng.range(1, new_enemy.attack);
       std::cout << new_enemy.name << " hits you for " << dmg << "!\n";
       int true_dmg = (dmg - (player.current_defence / 6));
       if (true_dmg < 0) {

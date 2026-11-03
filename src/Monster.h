@@ -3,6 +3,7 @@
 #include <thread>
 #include <chrono>
 #include <string>
+#include "Rng.h"
 
 constexpr int kBossLevel = 5;
 
@@ -33,11 +34,11 @@ public:
 
 };
 
-Monster returnOpponent(int level);
+Monster returnOpponent(int level, Rng &rng);
 
 Monster getBoss();
 
-Monster getRandomMonster();
+Monster getRandomMonster(Rng &rng);
 
 
 #endif

@@ -1,6 +1,5 @@
 #include "Monster.h"
 #include "Player.h"
-#include <cstdlib>
 #include <chrono>
 #include <thread>
 #include <iostream>
@@ -21,7 +20,7 @@ Monster::Monster(std::string n, int h, int a, int xp, int g, bool boss) {
     isBoss = boss;
 }
 
-Monster returnOpponent(int level)
+Monster returnOpponent(int level, Rng &rng)
 {
     if (level >= kBossLevel)
     {
@@ -29,7 +28,7 @@ Monster returnOpponent(int level)
     }
     
     
-    return getRandomMonster();
+    return getRandomMonster(rng);
     
 }
 
@@ -38,8 +37,8 @@ Monster getBoss()
     return Monster("Skeleton King", 200, 20, 100, 4000, true);
 }
 
-Monster getRandomMonster() {
-    int r = rand() % 10;
+Monster getRandomMonster(Rng &rng) {
+    int r = rng.range(0, 9);
 
     if (r <= 3) return Monster("Skeleton Minion", 30, 4, 10, 15);
     if (r <= 6) return Monster("Skeleton Soldier", 35, 6, 15, 20);

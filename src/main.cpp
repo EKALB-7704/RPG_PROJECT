@@ -1,7 +1,7 @@
 
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <random>
+#include <string>
 #include "Player.h"
 #include "SaveSystem.h"
 #include "Store.h"
@@ -9,6 +9,7 @@
 #include "Art.h"
 #include "Input.h"
 #include "Battle.h"
+#include "Rng.h"
 
 
 //Declare map function
@@ -35,10 +36,22 @@ void showMap() //map function
            MAIN
    ===================== */
 
-int main() // set main loop
+int main(int argc, char *argv[]) // set main loop
 {
+    // --seed N replays the same fights, for reproducing bugs.
+    std::uint32_t seed = std::random_device{}();
+    for (int i = 1; i + 1 < argc; ++i) {
+        if (std::string(argv[i]) == "--seed") {
+            try {
+                seed = static_cast<std::uint32_t>(std::stoul(argv[i + 1]));
+            } catch (const std::exception &) {
+                std::cerr << "Invalid --seed value: " << argv[i + 1] << "\n";
+                return 1;
+            }
+        }
+    }
+    Rng rng(seed);
 
-    srand(static_cast<unsigned>(time(0)));
     store store; 
     Area area;
     Art main_art;
@@ -77,7 +90,7 @@ int main() // set main loop
                     std::cout << "You have already defeated the enemy here. Travel to a new location to find more enemies.\n";
                     break;
                 }
-                switch (battle(player)) {
+                switch (battle(player, rng)) {
                     case BattleResult::Defeat:
                         std::cout << "\nGAME OVER.\n";
                         return 0;

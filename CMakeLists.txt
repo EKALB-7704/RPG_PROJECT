@@ -27,6 +27,7 @@ add_library(game_core STATIC
     src/Art.cpp
     src/Input.cpp
     src/SaveSystem.cpp
+    src/Rng.cpp
 )
 target_include_directories(game_core PUBLIC src)
 target_link_libraries(game_core PRIVATE project_warnings)
@@ -36,7 +37,7 @@ add_executable(skeleton_quest src/main.cpp)
 target_link_libraries(skeleton_quest PRIVATE game_core project_warnings)
 
 enable_testing()
-add_executable(tests tests/test_player.cpp)
+add_executable(tests tests/test_player.cpp tests/test_rng.cpp)
 target_link_libraries(tests PRIVATE game_core project_warnings)
 target_include_directories(tests SYSTEM PRIVATE third_party)
 add_test(NAME unit COMMAND tests)
