@@ -28,11 +28,17 @@ The game saves to `save.txt` in the directory you run it from.
 
 See the [user manual](docs/USER_MANUAL.md).
 
+## Contributing
+
+The codebase is mid-overhaul. See the [overhaul plan](docs/OVERHAUL.md) for the
+current state, the open findings and the remaining steps.
+
 ## Project structure
 
 ```
 src/
-  main.cpp             Main menu, game loop and combat
+  main.cpp             Main menu and game loop
+  Battle.*             Turn-based combat
   Player.*             Player stats, levelling, healing and special attack
   CharacterCreate.cpp  Character creation screens
   Monster.*            Enemy types, random encounters and the boss
@@ -43,6 +49,7 @@ src/
   Art.*                ASCII art
 docs/
   USER_MANUAL.md
+  OVERHAUL.md          Overhaul plan: current state and remaining steps
 ```
 
 ## Credits

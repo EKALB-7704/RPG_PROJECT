@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "Rng.h"
 
 class Player
 {
@@ -46,6 +47,6 @@ class Player
     void stats_readback();
 
     void heal();
-    int specialAttack();
+    int specialAttack(Rng &rng);
     void gainExp(int amount);
 };

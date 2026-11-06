@@ -1,7 +1,6 @@
 #include "Player.h"
 #include <iostream>
 #include <algorithm>
-#include <cstdlib>
 
 void Player::heal() {
     if (potion > 0) {
@@ -14,10 +13,10 @@ void Player::heal() {
     }
 }
 
-int Player::specialAttack() {
+int Player::specialAttack(Rng &rng) {
     if (stamina > 0)
     {
-    int dmg = current_attack + (rand() % 6 + 4);
+    int dmg = current_attack + rng.range(4, 9);
     std::cout << "You unleash a POWER STRIKE for " << dmg << " damage!\n";
     stamina--;
     return dmg;
